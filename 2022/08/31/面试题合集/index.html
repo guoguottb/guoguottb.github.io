@@ -137,7 +137,23 @@
       <section class="article-entry markdown-body layout-margin content-padding--large soft-size--large soft-style--box">
         <h2 id="css"><a href="#css" class="headerlink" title="css"></a>css</h2><h3 id="如何水平垂直居中一个元素"><a href="#如何水平垂直居中一个元素" class="headerlink" title="如何水平垂直居中一个元素"></a>如何水平垂直居中一个元素</h3><ol>
 <li>flex布局的方式，主轴justify-content：center，侧轴：align-items: center</li>
+<li>定位 + margin，top：50%，left：50%，margin-left ：盒子自身一半的宽度，margin-top：盒子自身高度的一半。</li>
+<li>定位 + transform，top：50%，left：50%，translate：（-50%，-50%）</li>
 </ol>
+<h3 id="css标准盒模型和ie盒模型的区别"><a href="#css标准盒模型和ie盒模型的区别" class="headerlink" title="css标准盒模型和ie盒模型的区别"></a>css标准盒模型和ie盒模型的区别</h3><blockquote>
+<p>IE盒模型</p>
+</blockquote>
+<ul>
+<li>width表示 content + padding + border 这三个部分的宽度</li>
+<li>box - sizing : border - box 是IE盒子模型</li>
+</ul>
+<blockquote>
+<p>标准盒模型</p>
+</blockquote>
+<ul>
+<li>width指内容部分的宽度，不包括border和padding，所以设置这两个属性会使盒子被撑大</li>
+<li>box-sizing : content - box 使W3C盒子模型</li>
+</ul>
 
       </section>
 
