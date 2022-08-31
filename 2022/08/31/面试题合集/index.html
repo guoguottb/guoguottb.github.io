@@ -135,7 +135,7 @@
       
       
       <section class="article-entry markdown-body layout-margin content-padding--large soft-size--large soft-style--box">
-        <h2 id="css"><a href="#css" class="headerlink" title="css"></a>css</h2><h3 id="如何水平垂直居中一个元素"><a href="#如何水平垂直居中一个元素" class="headerlink" title="如何水平垂直居中一个元素"></a>如何水平垂直居中一个元素</h3><ol>
+        <h2 id="css题目"><a href="#css题目" class="headerlink" title="css题目"></a>css题目</h2><h3 id="如何水平垂直居中一个元素"><a href="#如何水平垂直居中一个元素" class="headerlink" title="如何水平垂直居中一个元素"></a>如何水平垂直居中一个元素</h3><ol>
 <li>flex布局的方式，主轴justify-content：center，侧轴：align-items: center</li>
 <li>定位 + margin，top：50%，left：50%，margin-left ：盒子自身一半的宽度，margin-top：盒子自身高度的一半。</li>
 <li>定位 + transform，top：50%，left：50%，translate：（-50%，-50%）</li>
@@ -163,8 +163,34 @@
 </li>
 <li><p>边框圆角：border-radius</p>
 </li>
-<li><p>背景大小：background-size：cover；把背景图像扩展至足够大，以使背景图像完全覆盖背景区域，背景图像的某些部分也许无法显示</p>
+<li><p>背景大小：background-size：cover；把背景图像扩展至足够大，以使背景图像完全覆盖背景区域，背景图像的某些部分也许无法显示在背景定位区域中。background-size：contain；把图像扩展到最大尺寸，以使其宽度和高度完全适应内容区域，可能会失帧</p>
 </li>
+<li><p>transition&#x2F;渐变&#x2F;自定义动画&#x2F;媒体查询&#x2F;边框图片&#x2F;2&#x2F;3D转换</p>
+</li>
+</ol>
+<h3 id="HTML5开发中遇到那些问题？怎么解决的？"><a href="#HTML5开发中遇到那些问题？怎么解决的？" class="headerlink" title="HTML5开发中遇到那些问题？怎么解决的？"></a>HTML5开发中遇到那些问题？怎么解决的？</h3><ol>
+<li>同一张照片放在不同大小设备下显示的时候会导致图片失帧，解决办法就是使用2倍图，一般会在精灵图上面。</li>
+<li>禁止手机放大缩小，通常把user-saclable设置为0来关闭用户对页面视图缩放的行为</li>
+<li>上下拉动滚动条时卡顿，慢</li>
+</ol>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">body</span> &#123;</span><br><span class="line">	-webkit-<span class="attribute">overflow</span>-scrolling: touch;</span><br><span class="line">    <span class="attribute">overflow</span>-scrolling: touchl</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ol start="4">
+<li>给盒子加padding或者border会撑大盒子，因为默认时W3C标准盒子模型，宽度只包含内容，解决方案：box-sizing:  border-box，开启盒子内减模式</li>
+<li>外边距塌陷：嵌套的两个块元素，给子元素设置一个向上的外边距，此时的父元素会跟着掉下来，形成外边距塌陷，解决方案：</li>
+</ol>
+<ul>
+<li>给父元素设置上边距</li>
+<li>给父元素设置overflow属性</li>
+<li>给父元素或者子元素设置浮动</li>
+<li>绝对定位或者固定定位</li>
+<li>给父元素加padding</li>
+</ul>
+<ol start="6">
+<li>png24位的图片在ie6中出现背景，解决方案：做成png8的</li>
+<li>浏览器默认的内外边距不一致，解决方案全局设置css样式  *  { margin : 0 ; padding : 0 }</li>
+<li>行内块元素默认有间隙，之间转换位块级元素，然后float或者display: flex</li>
+<li>图片和文字没有对其，解决方案：vertical - align: middle</li>
 </ol>
 
       </section>
