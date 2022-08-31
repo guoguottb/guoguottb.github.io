@@ -239,6 +239,24 @@
 <li>父级加padding</li>
 <li>父级加border</li>
 </ul>
+<h3 id="11-清除浮动"><a href="#11-清除浮动" class="headerlink" title="11. 清除浮动"></a>11. 清除浮动</h3><ol>
+<li>给浮动元素的父级加上overflow：hidden</li>
+<li>在浮动的子元素最后面加个空标签属性写clear：both，但是这个标签是没有加载的，不怎么可取</li>
+<li>使用after伪元素，其实也是加clear：both</li>
+<li>直接给父级设置高度</li>
+</ol>
+<h2 id="js题目"><a href="#js题目" class="headerlink" title="js题目"></a>js题目</h2><h3 id="事件循环（Event-Loop）"><a href="#事件循环（Event-Loop）" class="headerlink" title="事件循环（Event Loop）"></a>事件循环（Event Loop）</h3><blockquote>
+<p>概念</p>
+</blockquote>
+<p>执行栈查看任务队列有没有任务并执行的过程称为事件循环</p>
+<blockquote>
+<p>应用场景</p>
+</blockquote>
+<p>如同步代码异步代码一起执行的时候，向定时器，点击事件等</p>
+<blockquote>
+<p>原理</p>
+</blockquote>
+<p>js的执行机制是单线程的，做完一件事情再去做下一件事情，</p>
 
       </section>
 
