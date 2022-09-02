@@ -211,6 +211,43 @@
 <h3 id="7-rem，vw，vh"><a href="#7-rem，vw，vh" class="headerlink" title="7. rem，vw，vh"></a>7. rem，vw，vh</h3><ol>
 <li>rem：核心原理就是1rem等于根(html)节点的字体大小,在不同的屏幕下监测不同屏幕的根节点大小达到移动适配效果</li>
 </ol>
+<h3 id="8-let，var，const三者的区别"><a href="#8-let，var，const三者的区别" class="headerlink" title="8.  let，var，const三者的区别"></a>8.  let，var，const三者的区别</h3><blockquote>
+<p>区别</p>
+</blockquote>
+<ul>
+<li><p>var：var的使用存在变量提升，js默认给其undefined值</p>
+</li>
+<li><p>let，const生命的变量不存在变量提升，也就是说在生命前使用它都会报错，</p>
+</li>
+</ul>
+<blockquote>
+<p>暂时性死区</p>
+</blockquote>
+<ul>
+<li>如果在let，const声明前使用变量，这段区域被称为”临时死区”</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (<span class="literal">true</span>) &#123;</span><br><span class="line">    <span class="comment">// 死区开始</span></span><br><span class="line">    value = <span class="number">10</span>;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(value);</span><br><span class="line">    <span class="comment">// 死区结束</span></span><br><span class="line">    <span class="keyword">let</span> value;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//index.html:55 Uncaught ReferenceError: Cannot access &#x27;value&#x27; before initialization</span></span><br><span class="line"><span class="comment">// 未捕获的ReferenceError:在初始化之前无法访问“value” </span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>重复声明</p>
+</blockquote>
+<ul>
+<li>let和const声明的变量不允许重复声明</li>
+<li>var声明的变量可以多次重复声明，但最终变量的值为最后移除声明赋值的结果</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span> <span class="keyword">var</span> a = <span class="number">10</span>;</span><br><span class="line"><span class="number">2</span> <span class="keyword">var</span> a = <span class="string">&#x27;abc&#x27;</span>;</span><br><span class="line"><span class="number">3</span> <span class="keyword">var</span> a = <span class="string">&#x27;last value&#x27;</span>;</span><br><span class="line"><span class="number">4</span> <span class="variable language_">console</span>.<span class="title function_">log</span>(a);  <span class="comment">// last value</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>varfor循环中最后打印的结果是同一个值，解决办法就是var替换成let，利用闭包</li>
+</ul>
+<blockquote>
+<p>const常量</p>
+</blockquote>
+<ul>
+<li><code>const</code>声明的作用是：创建一个只读的常量，一旦声明不可改变</li>
+<li>和<code>let</code>声明一样，const声明的常量无法提升，也存在临时死区</li>
+<li>和<code>let</code>不同的是，const声明后必须赋值，否则会报错</li>
+</ul>
 
       </section>
 

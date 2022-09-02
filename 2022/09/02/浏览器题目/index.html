@@ -234,6 +234,23 @@
 </ol>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">vue.<span class="property">config</span>.<span class="property">js</span></span><br><span class="line"></span><br><span class="line"><span class="attr">devServer</span>: &#123;</span><br><span class="line">	<span class="attr">proxy</span>: &#123;</span><br><span class="line">		<span class="string">&#x27;/api&#x27;</span>: &#123;</span><br><span class="line">			<span class="attr">target</span>: <span class="string">&#x27;接口url地址&#x27;</span></span><br><span class="line">        &#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
+<h3 id="3-http常见的状态码有哪些"><a href="#3-http常见的状态码有哪些" class="headerlink" title="3. http常见的状态码有哪些"></a>3. http常见的状态码有哪些</h3><blockquote>
+<p>概念</p>
+</blockquote>
+<p>HTTP 状态码是服务器端返回给客户端的响应状态码，根据（HTTP）状态码我们就能知道服务器端想要给客户端表达的具体含义，比如 200 就表示请求访问成功，500 就表示服务器端程序出错等。</p>
+<p>HTTP 状态码可分为 5 大类：</p>
+<ul>
+<li>1XX：消息状态码</li>
+<li>2XX：成功状态码</li>
+<li>3XX：重定向状态码</li>
+<li>4XX：客户端错误状态码</li>
+<li>5XX：服务端错误状态码</li>
+</ul>
+<blockquote>
+<p>总结</p>
+</blockquote>
+<p>HTTP 状态码分为 5 大类：1XX：表示消息状态码；2XX：表示成功状态码；3XX：表示重定向状态码；4XX：表示客户端错误状态码；5XX：表示服务端错误状态码。其中常见的具体状态码有：200：请求成功；301：永久重定向；302：临时重定向；303：查看其它地址；304：所请求的资源未修改，不返回任何资源，请走浏览器缓存。404：无法找到此页面；405：请求的方法类型不支持；500：服务器内部出错。</p>
+
       </section>
 
       
