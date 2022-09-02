@@ -24,7 +24,7 @@
 
   
 
-  <title>测试了图片，音频和视频 | 常也-像初雪一样自由洒落</title>
+  <title>浏览器题目 | 常也-像初雪一样自由洒落</title>
 
   
 
@@ -49,7 +49,7 @@
 <!-- header container -->
 <header class="header-container post">
   
-    <div class="post-image" style="background-image: url(https://cloud.miiiku.xyz/src/images/cover/cover-02.jpg-webp)"></div>
+    <div class="post-image" style="background-image: url(https://qiniu.sukoshi.xyz/src/images/68686407_p0.jpg)"></div>
   
 
   <!-- navbar -->
@@ -100,22 +100,16 @@
     <div class="header-content">
       <div class="post-text layout-block">
         <div class="layout-margin">
-          <h1 class="title-wrap">测试了图片，音频和视频</h1>
+          <h1 class="title-wrap">浏览器题目</h1>
           <h2 class="title-sub-wrap">
             <strong>Guo TongBiao</strong>
             <span>发布于</span>
-            <time  class="article-date" datetime="2022-09-01T11:56:38.000Z" itemprop="datePublished">2022-09-01</time>
+            <time  class="article-date" datetime="2022-09-02T09:07:50.000Z" itemprop="datePublished">2022-09-02</time>
           </h2>
           <ul class="wrap-list dark">
   
 </ul>
           <ul class="wrap-list dark">
-  
-    <li><a href="/tags/%E5%9B%BE%E7%89%87/">🏷️ 图片</a></li>
-  
-    <li><a href="/tags/%E9%9F%B3%E9%A2%91/">🏷️ 音频</a></li>
-  
-    <li><a href="/tags/%E8%A7%86%E9%A2%91/">🏷️ 视频</a></li>
   
 </ul>
         </div>
@@ -139,16 +133,8 @@
       
       
       <section class="article-entry markdown-body layout-margin content-padding--large soft-size--large soft-style--box">
-        <h3 id="1-测试图片"><a href="#1-测试图片" class="headerlink" title="1. 测试图片"></a>1. 测试图片</h3>
-    <figure class="figure-image">
-      <img src="https://qiniu.sukoshi.xyz/src/images/68686407_p0.jpg" alt="带描述带图片" loading="lazy" />
-      <figcaption>带描述带图片</figcaption>
-    </figure>
-  
+        <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
 
-<h3 id="2-测试音频"><a href="#2-测试音频" class="headerlink" title="2. 测试音频"></a>2. 测试音频</h3><div class="aplayer-box" data-url='https://qiniu.sukoshi.xyz/public/music/鹿乃 - アイロニ.mp3' data-name='アイロニ' data-artist='鹿乃' data-cover='https://qiniu.sukoshi.xyz/public/music/鹿乃 - アイロニ.jpg' data-lrc='https://qiniu.sukoshi.xyz/public/music/鹿乃 - アイロニ.lrc' data-lrcType='3' ></div>
-
-<h3 id="3-测试视频"><a href="#3-测试视频" class="headerlink" title="3. 测试视频"></a>3. 测试视频</h3><div class="dplayer-box" data-url='https://qiniu.sukoshi.xyz/video/%E7%BE%8E.mp4' data-pic='https://qiniu.sukoshi.xyz/video/%E7%BE%8E.mp4?vframe/jpg/offset/10' ></div>
 
       </section>
 
@@ -156,28 +142,14 @@
       
         <nav class="article-nav">
           
-            <div class="article-nav-item layout-padding">
-  <article class="card-container article-nav-card content-padding--primary soft-size--large soft-style--box">
-    
-    <div class="card-text">
-      
-        <a href="/2022/09/02/vue%E9%A2%98%E7%9B%AE/" itemprop="url">
-          <h2 class="card-text--title text-ellipsis">vue题目</h2>
-        </a>
-      
-      <div class="card-text--row">Newer</div>
-    </div>
-  </article>
-</div>
-          
           
             <div class="article-nav-item layout-padding">
   <article class="card-container article-nav-card content-padding--primary soft-size--large soft-style--box">
     
     <div class="card-text">
       
-        <a href="/2022/08/31/markdown%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/" itemprop="url">
-          <h2 class="card-text--title text-ellipsis">markdown使用教程</h2>
+        <a href="/2022/09/02/js%E9%A2%98%E7%9B%AE/" itemprop="url">
+          <h2 class="card-text--title text-ellipsis">js题目</h2>
         </a>
       
       <div class="card-text--row">Older</div>
@@ -341,70 +313,7 @@
   <!-- aplayer -->
 
 
-  <!-- aplayer 音频 start -->
-  <link rel="stylesheet" href="https://unpkg.com/aplayer@1.10.1/dist/APlayer.min.css">
-  <script type="text/javascript" src="https://unpkg.com/aplayer@1.10.1/dist/APlayer.min.js"></script>
-  <script type="text/javascript">
-    const aplayer = document.querySelectorAll(".aplayer-box");
-    aplayer && initaplayer(aplayer);
-    function initaplayer(els) {
-      let elsArr = Array.from(els);
-      elsArr.forEach(el => {
-        let params = {
-          container: el,
-          audio: { ...el.dataset },
-          theme: "#b7daff",
-          autoplay: false,
-          loop: false,
-          mutex: true,
-        }
-        if (el.dataset.lrc) {
-          params['lrcType'] = 3
-        }
-        new APlayer(params);
-      });
-    }
-  </script>
-  <!-- aplayer 音频 end -->
-  
-
-
 <!-- dplayer -->
-
-
-<!-- dplayer 视频 start -->
-<script type="text/javascript" src="https://unpkg.com/hls.js@1.0.1/dist/hls.js"></script>
-<script type="text/javascript" src="https://unpkg.com/dplayer@1.25.1/dist/DPlayer.min.js"></script>
-<script type="text/javascript">
-  const dplayer = document.querySelectorAll(".dplayer-box");
-  dplayer && initDPlayer(dplayer);
-  function initDPlayer(els) {
-    let elsArr = Array.from(els);
-    elsArr.forEach(el => {
-      let url = el.dataset.url;
-      let pic = el.dataset.pic;
-      let subtitle = el.dataset.subtitle;
-
-      let options = {
-        container: el,
-        video: { url: url, pic: pic },
-        theme: "#b7daff",
-        autoplay: false,
-        loop: false,
-        mutex: true,
-      }
-
-      if (subtitle) {
-        options.subtitle = {
-          url: el.dataset.subtitle,
-        }
-      }
-      new DPlayer(options);
-    });
-  }
-</script>
-<!-- dplayer 视频 end -->
-
 
 
 

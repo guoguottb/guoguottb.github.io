@@ -24,7 +24,7 @@
 
   
 
-  <title>测试了图片，音频和视频 | 常也-像初雪一样自由洒落</title>
+  <title>css题目 | 常也-像初雪一样自由洒落</title>
 
   
 
@@ -49,7 +49,7 @@
 <!-- header container -->
 <header class="header-container post">
   
-    <div class="post-image" style="background-image: url(https://cloud.miiiku.xyz/src/images/cover/cover-02.jpg-webp)"></div>
+    <div class="post-image" style="background-image: url(https://qiniu.sukoshi.xyz/src/images/68686407_p0.jpg)"></div>
   
 
   <!-- navbar -->
@@ -100,22 +100,16 @@
     <div class="header-content">
       <div class="post-text layout-block">
         <div class="layout-margin">
-          <h1 class="title-wrap">测试了图片，音频和视频</h1>
+          <h1 class="title-wrap">css题目</h1>
           <h2 class="title-sub-wrap">
             <strong>Guo TongBiao</strong>
             <span>发布于</span>
-            <time  class="article-date" datetime="2022-09-01T11:56:38.000Z" itemprop="datePublished">2022-09-01</time>
+            <time  class="article-date" datetime="2022-08-31T03:15:19.000Z" itemprop="datePublished">2022-08-31</time>
           </h2>
           <ul class="wrap-list dark">
   
 </ul>
           <ul class="wrap-list dark">
-  
-    <li><a href="/tags/%E5%9B%BE%E7%89%87/">🏷️ 图片</a></li>
-  
-    <li><a href="/tags/%E9%9F%B3%E9%A2%91/">🏷️ 音频</a></li>
-  
-    <li><a href="/tags/%E8%A7%86%E9%A2%91/">🏷️ 视频</a></li>
   
 </ul>
         </div>
@@ -139,16 +133,116 @@
       
       
       <section class="article-entry markdown-body layout-margin content-padding--large soft-size--large soft-style--box">
-        <h3 id="1-测试图片"><a href="#1-测试图片" class="headerlink" title="1. 测试图片"></a>1. 测试图片</h3>
-    <figure class="figure-image">
-      <img src="https://qiniu.sukoshi.xyz/src/images/68686407_p0.jpg" alt="带描述带图片" loading="lazy" />
-      <figcaption>带描述带图片</figcaption>
-    </figure>
-  
+        <h3 id="1-如何水平垂直居中一个元素"><a href="#1-如何水平垂直居中一个元素" class="headerlink" title="1. 如何水平垂直居中一个元素"></a>1. 如何水平垂直居中一个元素</h3><ol>
+<li>flex布局的方式，主轴justify-content：center，侧轴：align-items: center</li>
+<li>定位 + margin，top：50%，left：50%，margin-left ：盒子自身一半的宽度，margin-top：盒子自身高度的一半。</li>
+<li>定位 + transform，top：50%，left：50%，translate：（-50%，-50%）</li>
+</ol>
+<h3 id="2-css标准盒模型和ie盒模型的区别"><a href="#2-css标准盒模型和ie盒模型的区别" class="headerlink" title="2. css标准盒模型和ie盒模型的区别"></a>2. css标准盒模型和ie盒模型的区别</h3><blockquote>
+<p>IE盒模型</p>
+</blockquote>
+<ul>
+<li>width表示 content + padding + border 这三个部分的宽度</li>
+<li>box - sizing : border - box 是IE盒子模型</li>
+</ul>
+<blockquote>
+<p>标准盒模型</p>
+</blockquote>
+<ul>
+<li>width指内容部分的宽度，不包括border和padding，所以设置这两个属性会使盒子被撑大</li>
+<li>box-sizing : content - box 使W3C盒子模型</li>
+</ul>
+<h3 id="3-css3新属性"><a href="#3-css3新属性" class="headerlink" title="3. css3新属性"></a>3. css3新属性</h3><ol>
+<li><p>颜色，RGBA：红绿蓝三原色，A是透明度，HSLA：色调，饱和度，亮度，透明度</p>
+</li>
+<li><p>文字阴影：text-shadow</p>
+</li>
+<li><p>盒子阴影：box-shadow</p>
+</li>
+<li><p>边框圆角：border-radius</p>
+</li>
+<li><p>背景大小：background-size：cover；把背景图像扩展至足够大，以使背景图像完全覆盖背景区域，背景图像的某些部分也许无法显示在背景定位区域中。background-size：contain；把图像扩展到最大尺寸，以使其宽度和高度完全适应内容区域，可能会失帧</p>
+</li>
+<li><p>transition&#x2F;渐变&#x2F;自定义动画&#x2F;媒体查询&#x2F;边框图片&#x2F;2&#x2F;3D转换</p>
+</li>
+</ol>
+<h3 id="4-HTML5开发中遇到那些问题？怎么解决的？"><a href="#4-HTML5开发中遇到那些问题？怎么解决的？" class="headerlink" title="4. HTML5开发中遇到那些问题？怎么解决的？"></a>4. HTML5开发中遇到那些问题？怎么解决的？</h3><ol>
+<li>同一张照片放在不同大小设备下显示的时候会导致图片失帧，解决办法就是使用2倍图，一般会在精灵图上面。</li>
+<li>禁止手机放大缩小，通常把user-saclable设置为0来关闭用户对页面视图缩放的行为</li>
+<li>上下拉动滚动条时卡顿，慢</li>
+</ol>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">body</span> &#123;</span><br><span class="line">	-webkit-<span class="attribute">overflow</span>-scrolling: touch;</span><br><span class="line">    <span class="attribute">overflow</span>-scrolling: touchl</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h3 id="2-测试音频"><a href="#2-测试音频" class="headerlink" title="2. 测试音频"></a>2. 测试音频</h3><div class="aplayer-box" data-url='https://qiniu.sukoshi.xyz/public/music/鹿乃 - アイロニ.mp3' data-name='アイロニ' data-artist='鹿乃' data-cover='https://qiniu.sukoshi.xyz/public/music/鹿乃 - アイロニ.jpg' data-lrc='https://qiniu.sukoshi.xyz/public/music/鹿乃 - アイロニ.lrc' data-lrcType='3' ></div>
+<ol start="4">
+<li>给盒子加padding或者border会撑大盒子，因为默认时W3C标准盒子模型，宽度只包含内容，解决方案：box-sizing:  border-box，开启盒子内减模式</li>
+<li>外边距塌陷：嵌套的两个块元素，给子元素设置一个向上的外边距，此时的父元素会跟着掉下来，形成外边距塌陷，解决方案：</li>
+</ol>
+<ul>
+<li>给父元素设置上边距</li>
+<li>给父元素设置overflow属性</li>
+<li>给父元素或者子元素设置浮动</li>
+<li>绝对定位或者固定定位</li>
+<li>给父元素加padding</li>
+</ul>
+<ol start="6">
+<li>png24位的图片在ie6中出现背景，解决方案：做成png8的</li>
+<li>浏览器默认的内外边距不一致，解决方案全局设置css样式  *  { margin : 0 ; padding : 0 }</li>
+<li>行内块元素默认有间隙，之间转换位块级元素，然后float或者display: flex</li>
+<li>图片和文字没有对其，解决方案：vertical - align: middle</li>
+</ol>
+<h3 id="5-什么是BFC？"><a href="#5-什么是BFC？" class="headerlink" title="5. 什么是BFC？"></a>5. 什么是BFC？</h3><blockquote>
+<p>概念</p>
+</blockquote>
+<p>块级格式化上下文，BFC是一个独立布局的环境，其中的元素布局不受外界的影响，在同一个BFC中，块盒和行盒都会垂直的沿着其父级元素的边框排列</p>
+<blockquote>
+<p>如何产生的及缺点</p>
+</blockquote>
+<ul>
+<li>position: absolute； </li>
+<li>display：inline-block，table-cell，flex，table-caption或者inline-flex。缺点：可能引发响应性问题</li>
+<li>float：left&#x2F;right；缺点：float：left会把元素移至左侧，并被其它元素环绕</li>
+<li>overflow：hidden，scroll，auto，clip，（overflow的值不是visible），缺点：overflow：scroll可能产生多余的滚动条，overflow：hidden将裁切移除元素</li>
+</ul>
+<blockquote>
+<p>作用</p>
+</blockquote>
+<p>利用BFC可避免外边距塌陷，当两个相邻元素在不同的BFC中，就能避免外边距塌陷的问题</p>
+<h3 id="6-想让某一块区域出现滚动条"><a href="#6-想让某一块区域出现滚动条" class="headerlink" title="6. 想让某一块区域出现滚动条"></a>6. 想让某一块区域出现滚动条</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">position</span>:absolute;</span><br><span class="line"><span class="attribute">top</span>:<span class="number">92px</span>;</span><br><span class="line"><span class="attribute">bottom</span>:<span class="number">100px</span>;</span><br><span class="line"><span class="attribute">overflow-y</span>:scroll;</span><br><span class="line"><span class="attribute">width</span>:<span class="number">100%</span>;</span><br></pre></td></tr></table></figure>
 
-<h3 id="3-测试视频"><a href="#3-测试视频" class="headerlink" title="3. 测试视频"></a>3. 测试视频</h3><div class="dplayer-box" data-url='https://qiniu.sukoshi.xyz/video/%E7%BE%8E.mp4' data-pic='https://qiniu.sukoshi.xyz/video/%E7%BE%8E.mp4?vframe/jpg/offset/10' ></div>
+<h3 id="7-如何在Chrome浏览器中让字体改成小于12px？"><a href="#7-如何在Chrome浏览器中让字体改成小于12px？" class="headerlink" title="7. 如何在Chrome浏览器中让字体改成小于12px？"></a>7. 如何在Chrome浏览器中让字体改成小于12px？</h3><p>做法：加webkit前缀，用transform：scale()这个属性进行缩放！</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">p</span> <span class="selector-tag">span</span> &#123;</span><br><span class="line">    <span class="attribute">font-size</span>:<span class="number">10px</span>;</span><br><span class="line">    webkit-<span class="attribute">transform</span>:<span class="built_in">scale</span>(<span class="number">0.8</span>);</span><br><span class="line">    <span class="attribute">display</span>:block;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="8-flex布局"><a href="#8-flex布局" class="headerlink" title="8. flex布局"></a>8. flex布局</h3><p>flex &#x3D; 1是哪三个属性的缩写</p>
+<ul>
+<li>flex-grow：默认值为0，指的是相对于其他的子元素的扩展比率</li>
+<li>flex-shink：默认值为1，指的是相对与其他元素的收缩比率</li>
+<li>flex-basis：默认值为auto，指的是子元素的具体长度，可以为长度（rem，px，em）也可以为百分比</li>
+</ul>
+<h3 id="9-rem-x2F-em-x2F-px-x2F-vh-x2F-vw"><a href="#9-rem-x2F-em-x2F-px-x2F-vh-x2F-vw" class="headerlink" title="9. rem&#x2F;em&#x2F;px&#x2F;vh&#x2F;vw"></a>9. rem&#x2F;em&#x2F;px&#x2F;vh&#x2F;vw</h3><ul>
+<li>px，绝对单位，像素</li>
+<li>rem，相对单位，相比于html根节点字体大小</li>
+<li>em，相对单位，相对于父元素字体大小，1em&#x3D;16px</li>
+<li>vw&#x2F;vm，相对单位，相对于视口宽度&#x2F;高度，1vh&#x2F;1vm等于视口宽&#x2F;高的1%</li>
+</ul>
+<h3 id="10-margin重叠，外边距塌陷怎么解决"><a href="#10-margin重叠，外边距塌陷怎么解决" class="headerlink" title="10. margin重叠，外边距塌陷怎么解决"></a>10. margin重叠，外边距塌陷怎么解决</h3><blockquote>
+<p>概念</p>
+</blockquote>
+<p>当子盒子在父盒子里面，给子盒子设置margin-top父盒子会掉下来</p>
+<blockquote>
+<p>解决办法（触发BFC）</p>
+</blockquote>
+<ul>
+<li>子级加position：absolute</li>
+<li>父级加overflow：hidden</li>
+<li>父级加padding</li>
+<li>父级加border</li>
+</ul>
+<h3 id="11-清除浮动"><a href="#11-清除浮动" class="headerlink" title="11. 清除浮动"></a>11. 清除浮动</h3><ol>
+<li>给浮动元素的父级加上overflow：hidden</li>
+<li>在浮动的子元素最后面加个空标签属性写clear：both，但是这个标签是没有加载的，不怎么可取</li>
+<li>使用after伪元素，其实也是加clear：both</li>
+<li>直接给父级设置高度</li>
+</ol>
 
       </section>
 
@@ -161,8 +255,8 @@
     
     <div class="card-text">
       
-        <a href="/2022/09/02/vue%E9%A2%98%E7%9B%AE/" itemprop="url">
-          <h2 class="card-text--title text-ellipsis">vue题目</h2>
+        <a href="/2022/08/31/markdown%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/" itemprop="url">
+          <h2 class="card-text--title text-ellipsis">markdown使用教程</h2>
         </a>
       
       <div class="card-text--row">Newer</div>
@@ -176,8 +270,8 @@
     
     <div class="card-text">
       
-        <a href="/2022/08/31/markdown%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/" itemprop="url">
-          <h2 class="card-text--title text-ellipsis">markdown使用教程</h2>
+        <a href="/2022/08/30/hello-world/" itemprop="url">
+          <h2 class="card-text--title text-ellipsis">Hello World</h2>
         </a>
       
       <div class="card-text--row">Older</div>
@@ -341,70 +435,7 @@
   <!-- aplayer -->
 
 
-  <!-- aplayer 音频 start -->
-  <link rel="stylesheet" href="https://unpkg.com/aplayer@1.10.1/dist/APlayer.min.css">
-  <script type="text/javascript" src="https://unpkg.com/aplayer@1.10.1/dist/APlayer.min.js"></script>
-  <script type="text/javascript">
-    const aplayer = document.querySelectorAll(".aplayer-box");
-    aplayer && initaplayer(aplayer);
-    function initaplayer(els) {
-      let elsArr = Array.from(els);
-      elsArr.forEach(el => {
-        let params = {
-          container: el,
-          audio: { ...el.dataset },
-          theme: "#b7daff",
-          autoplay: false,
-          loop: false,
-          mutex: true,
-        }
-        if (el.dataset.lrc) {
-          params['lrcType'] = 3
-        }
-        new APlayer(params);
-      });
-    }
-  </script>
-  <!-- aplayer 音频 end -->
-  
-
-
 <!-- dplayer -->
-
-
-<!-- dplayer 视频 start -->
-<script type="text/javascript" src="https://unpkg.com/hls.js@1.0.1/dist/hls.js"></script>
-<script type="text/javascript" src="https://unpkg.com/dplayer@1.25.1/dist/DPlayer.min.js"></script>
-<script type="text/javascript">
-  const dplayer = document.querySelectorAll(".dplayer-box");
-  dplayer && initDPlayer(dplayer);
-  function initDPlayer(els) {
-    let elsArr = Array.from(els);
-    elsArr.forEach(el => {
-      let url = el.dataset.url;
-      let pic = el.dataset.pic;
-      let subtitle = el.dataset.subtitle;
-
-      let options = {
-        container: el,
-        video: { url: url, pic: pic },
-        theme: "#b7daff",
-        autoplay: false,
-        loop: false,
-        mutex: true,
-      }
-
-      if (subtitle) {
-        options.subtitle = {
-          url: el.dataset.subtitle,
-        }
-      }
-      new DPlayer(options);
-    });
-  }
-</script>
-<!-- dplayer 视频 end -->
-
 
 
 
