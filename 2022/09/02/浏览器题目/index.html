@@ -133,8 +133,48 @@
       
       
       <section class="article-entry markdown-body layout-margin content-padding--large soft-size--large soft-style--box">
-        <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
+        <h3 id="01-三次握手，四次挥手"><a href="#01-三次握手，四次挥手" class="headerlink" title="01. 三次握手，四次挥手"></a>01. 三次握手，四次挥手</h3><p>客户端和服务器之间建立连接需要经过<strong>三次确认</strong>的阶段，我们称之为<code>TCP</code>的三次握手</p>
+<ul>
+<li>三次握手</li>
+</ul>
+<ol>
+<li>第一次握手：客户端发送一个<code>syn</code>报文，设置发送序号为<code>X</code>，客户端进入<code>SYN_SENT</code>状态，等待服务器回应。</li>
+<li>第二次握手：服务端收到<code>syn</code>报文，但是服务端必须确定客户端的<code>syn(ack= X + 1)</code>, 因此服务端也要发送一个<code>syn=Y</code>给客户端进行确认，表示服务端已经收到客户端的请求。服务端需要发送<code>ack+syn</code>给客户端，此时服务器进入<code>SYN_RECV</code>状态</li>
+<li>第三次握手：客户端收到服务器的<code>syn+ack</code>包，向服务器发送确认包<code>ack(ack=Y+1）</code>，此包发送完毕，客户端和服务器进入<code>ESTABLISHED</code>（<code>TCP</code>连接成功）状态，完成三次握手。</li>
+</ol>
+<ul>
+<li>四次挥手</li>
+</ul>
+<ol>
+<li><code>TCP</code>客户端发送一个<code>FIN</code>，用来关闭客户到服务器的数据传送。</li>
+<li>服务器收到这个<code>FIN</code>，它发回一个<code>ACK</code>，确认序号为收到的序号加1。和<code>SYN</code>一样，一个<code>FIN</code>将占用一个序号。</li>
+<li>服务器关闭客户端的连接，发送一个<code>FIN</code>给客户端。</li>
+<li>客户端发回<code>ACK</code>报文确认，并将确认序号设置为收到序号加1。</li>
+</ol>
+<h3 id="02-cookie、localStorage和sessionStorage-三者之间的区别以及存储、获取、删除等使用方式"><a href="#02-cookie、localStorage和sessionStorage-三者之间的区别以及存储、获取、删除等使用方式" class="headerlink" title="02. cookie、localStorage和sessionStorage 三者之间的区别以及存储、获取、删除等使用方式"></a>02. cookie、localStorage和sessionStorage 三者之间的区别以及存储、获取、删除等使用方式</h3><blockquote>
+<p>概念</p>
+</blockquote>
+<p>前端开发的时候，在网页刷新的时候，所有数据都会被清空，这时候就要用到本地存储的技术，前端本地存储的方式有三种，分别是cookie，localstorage和sessionStorage ，这是大家都知道的。</p>
+<blockquote>
+<p>使用方式</p>
+</blockquote>
+<ol>
+<li><p>cookie</p>
+</li>
+<li><p>localStorage 和 sessionStorage<strong>所使用的方法是一样的</strong>，下面以sessionStorage为栗子：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">sessionStorage.<span class="title function_">setItem</span>(name,num);<span class="comment">//存储数据</span></span><br><span class="line"><span class="keyword">let</span> dataAll = sessionStorage.<span class="title function_">valueOf</span>();<span class="comment">//获取全部数据</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(dataAll,<span class="string">&#x27;获取全部数据&#x27;</span>);</span><br><span class="line"><span class="keyword">var</span> dataSession = sessionStorage.<span class="title function_">getItem</span>(name);<span class="comment">//获取指定键名数据</span></span><br><span class="line">sessionStorage.<span class="title function_">removeItem</span>(name); <span class="comment">//删除指定键名数据</span></span><br><span class="line">sessionStorage.<span class="title function_">clear</span>();<span class="comment">//清空缓存数据：localStorage.clear();</span></span><br></pre></td></tr></table></figure>
 
+<blockquote>
+<p>生命周期</p>
+</blockquote>
+</li>
+<li><p>cookie：可设置失效时间，没有设置的话，默认是关闭浏览器后失效。</p>
+</li>
+<li><p>localStorage：除非被手动清除，否则将会永久保存。</p>
+</li>
+<li><p>sessionStorage： 仅在当前网页会话下有效，关闭页面或浏览器后就会被清除。</p>
+</li>
+</ol>
 
       </section>
 
