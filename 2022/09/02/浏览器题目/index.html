@@ -175,6 +175,64 @@
 <li><p>sessionStorage： 仅在当前网页会话下有效，关闭页面或浏览器后就会被清除。</p>
 </li>
 </ol>
+<blockquote>
+<p>存放数据大小：</p>
+</blockquote>
+<ol>
+<li>cookie：4KB左右</li>
+<li>localStorage和sessionStorage：可以保存5MB的信息。</li>
+</ol>
+<blockquote>
+<p> http请求：</p>
+</blockquote>
+<ol>
+<li>cookie：每次都会携带在HTTP头中，如果使用cookie保存过多数据会带来性能问题</li>
+<li>localStorage和sessionStorage：仅在客户端（即浏览器）中保存，不参与和服务器的通信</li>
+</ol>
+<blockquote>
+<p>易用性</p>
+</blockquote>
+<ol>
+<li>cookie：需要程序员自己封装，源生的Cookie接口不友好</li>
+<li>localStorage和sessionStorage：源生接口可以接受，亦可再次封装来对Object和Array有更好的支持</li>
+</ol>
+<blockquote>
+<p>应用场景</p>
+</blockquote>
+<ol>
+<li>从安全性来说，因为每次http请求都会携带cookie信息，这样无形中浪费了带宽，所以cookie应该尽可能少的使用，另外cookie还需要指定作用域，不可以跨域调用，限制比较多。但是用来识别用户登录来说，cookie还是比storage更好用的。其他情况下，可以使用storage，就用storage。</li>
+<li>storage在存储数据的大小上面秒杀了cookie，现在基本上很少使用cookie了，因为更大总是更好的，哈哈哈你们懂得。</li>
+<li>localStorage和sessionStorage唯一的差别一个是永久保存在浏览器里面，一个是关闭网页就清除了信息。localStorage可以用来跨页面传递参数，sessionStorage用来保存一些临时的数据，防止用户刷新页面之后丢失了一些参数。</li>
+</ol>
+<h3 id="03-怎么解决跨域"><a href="#03-怎么解决跨域" class="headerlink" title="03. 怎么解决跨域"></a>03. 怎么解决跨域</h3><blockquote>
+<p>概念</p>
+</blockquote>
+<p><strong>CORS全称</strong>Cross-Origin Resource Sharing，意为跨域资源共享。当一个资源去访问另一个不同域名或者同域名不同端口的资源时，就会发出跨域请求。如果此时另一个资源不允许其进行跨域资源访问，那么访问就会遇到跨域问题。简单来说就是只要协议，域名，端口有一个不同就会出现跨域问题。</p>
+<ol>
+<li><strong>跨域方案之CORS</strong></li>
+</ol>
+<ul>
+<li>通过服务器设置一系列响应头来实现跨域</li>
+<li>第三方模块CORS来解决跨域问题</li>
+<li>下载安装CORS：npm install cors</li>
+<li>加载cors: const cors &#x3D; require(“cors”)</li>
+<li>注册为中间件：app.use(cors())</li>
+<li>中间件需要注册在其他中间件之前</li>
+</ul>
+<ol start="2">
+<li><strong>跨域方案之JSONP</strong></li>
+</ol>
+<ul>
+<li>JSONP方案之支持GET请求</li>
+<li>JSONP没有浏览器兼容问题，任何浏览器都支持</li>
+<li>HTML标签的src属性，不受跨域访问的影响，没有跨域问题</li>
+<li>JSONP的实现：</li>
+<li>客户端先准备一个函数，比如 abc，并且设置好形参，准备接收响应数据客户端通过script标签的src属性，向接口发送请求，并传递 callback&#x3D;abc 参数服务端响应一个字符串 abc({ “status”: 0, “message”: “登录成功” })客户端将服务器返回的字符串当做JS代码解释，从而实现跨域</li>
+</ul>
+<ol start="3">
+<li>跨域问题之本地服务器代理</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">vue.<span class="property">config</span>.<span class="property">js</span></span><br><span class="line"></span><br><span class="line"><span class="attr">devServer</span>: &#123;</span><br><span class="line">	<span class="attr">proxy</span>: &#123;</span><br><span class="line">		<span class="string">&#x27;/api&#x27;</span>: &#123;</span><br><span class="line">			<span class="attr">target</span>: <span class="string">&#x27;接口url地址&#x27;</span></span><br><span class="line">        &#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
       </section>
 
