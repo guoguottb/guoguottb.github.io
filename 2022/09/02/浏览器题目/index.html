@@ -133,7 +133,7 @@
       
       
       <section class="article-entry markdown-body layout-margin content-padding--large soft-size--large soft-style--box">
-        <h3 id="01-三次握手，四次挥手"><a href="#01-三次握手，四次挥手" class="headerlink" title="01. 三次握手，四次挥手"></a>01. 三次握手，四次挥手</h3><p>客户端和服务器之间建立连接需要经过<strong>三次确认</strong>的阶段，我们称之为<code>TCP</code>的三次握手</p>
+        <h3><span id="01-三次握手四次挥手">01. 三次握手，四次挥手</span></h3><p>客户端和服务器之间建立连接需要经过<strong>三次确认</strong>的阶段，我们称之为<code>TCP</code>的三次握手</p>
 <ul>
 <li>三次握手</li>
 </ul>
@@ -151,7 +151,7 @@
 <li>服务器关闭客户端的连接，发送一个<code>FIN</code>给客户端。</li>
 <li>客户端发回<code>ACK</code>报文确认，并将确认序号设置为收到序号加1。</li>
 </ol>
-<h3 id="02-cookie、localStorage和sessionStorage-三者之间的区别以及存储、获取、删除等使用方式"><a href="#02-cookie、localStorage和sessionStorage-三者之间的区别以及存储、获取、删除等使用方式" class="headerlink" title="02. cookie、localStorage和sessionStorage 三者之间的区别以及存储、获取、删除等使用方式"></a>02. cookie、localStorage和sessionStorage 三者之间的区别以及存储、获取、删除等使用方式</h3><blockquote>
+<h3><span id="02-cookie-localstorage和sessionstorage-三者之间的区别以及存储-获取-删除等使用方式">02. cookie、localStorage和sessionStorage 三者之间的区别以及存储、获取、删除等使用方式</span></h3><blockquote>
 <p>概念</p>
 </blockquote>
 <p>前端开发的时候，在网页刷新的时候，所有数据都会被清空，这时候就要用到本地存储的技术，前端本地存储的方式有三种，分别是cookie，localstorage和sessionStorage ，这是大家都知道的。</p>
@@ -204,7 +204,7 @@
 <li>storage在存储数据的大小上面秒杀了cookie，现在基本上很少使用cookie了，因为更大总是更好的，哈哈哈你们懂得。</li>
 <li>localStorage和sessionStorage唯一的差别一个是永久保存在浏览器里面，一个是关闭网页就清除了信息。localStorage可以用来跨页面传递参数，sessionStorage用来保存一些临时的数据，防止用户刷新页面之后丢失了一些参数。</li>
 </ol>
-<h3 id="03-怎么解决跨域"><a href="#03-怎么解决跨域" class="headerlink" title="03. 怎么解决跨域"></a>03. 怎么解决跨域</h3><blockquote>
+<h3><span id="03-怎么解决跨域">03. 怎么解决跨域</span></h3><blockquote>
 <p>概念</p>
 </blockquote>
 <p><strong>CORS全称</strong>Cross-Origin Resource Sharing，意为跨域资源共享。当一个资源去访问另一个不同域名或者同域名不同端口的资源时，就会发出跨域请求。如果此时另一个资源不允许其进行跨域资源访问，那么访问就会遇到跨域问题。简单来说就是只要协议，域名，端口有一个不同就会出现跨域问题。</p>
@@ -234,7 +234,7 @@
 </ol>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">vue.<span class="property">config</span>.<span class="property">js</span></span><br><span class="line"></span><br><span class="line"><span class="attr">devServer</span>: &#123;</span><br><span class="line">	<span class="attr">proxy</span>: &#123;</span><br><span class="line">		<span class="string">&#x27;/api&#x27;</span>: &#123;</span><br><span class="line">			<span class="attr">target</span>: <span class="string">&#x27;接口url地址&#x27;</span></span><br><span class="line">        &#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h3 id="3-http常见的状态码有哪些"><a href="#3-http常见的状态码有哪些" class="headerlink" title="3. http常见的状态码有哪些"></a>3. http常见的状态码有哪些</h3><blockquote>
+<h3><span id="3-http常见的状态码有哪些">3. http常见的状态码有哪些</span></h3><blockquote>
 <p>概念</p>
 </blockquote>
 <p>HTTP 状态码是服务器端返回给客户端的响应状态码，根据（HTTP）状态码我们就能知道服务器端想要给客户端表达的具体含义，比如 200 就表示请求访问成功，500 就表示服务器端程序出错等。</p>
@@ -250,7 +250,7 @@
 <p>总结</p>
 </blockquote>
 <p>HTTP 状态码分为 5 大类：1XX：表示消息状态码；2XX：表示成功状态码；3XX：表示重定向状态码；4XX：表示客户端错误状态码；5XX：表示服务端错误状态码。其中常见的具体状态码有：200：请求成功；301：永久重定向；302：临时重定向；303：查看其它地址；304：所请求的资源未修改，不返回任何资源，请走浏览器缓存。404：无法找到此页面；405：请求的方法类型不支持；500：服务器内部出错。</p>
-<h3 id="4-地址栏输入url的过程"><a href="#4-地址栏输入url的过程" class="headerlink" title="4. 地址栏输入url的过程"></a>4. 地址栏输入url的过程</h3><ol>
+<h3><span id="4-地址栏输入url的过程">4. 地址栏输入url的过程</span></h3><ol>
 <li>url解析：是合法url还是搜索关键词</li>
 <li>dns解析：本地&#x2F;dns服务器，把url地址解析成IP地址的过程就是DNS解析</li>
 <li>TCP连接：通过ip地址&#x2F;3次握手</li>
@@ -273,7 +273,7 @@
 <li>服务端发送完成之后进入等待状态，通知客户端可以断开练级了</li>
 <li>客户端确认收到数据，服务端只要收到客户端发出的确认就进入关闭状态。服务器结束TCP链接的时间要比客户端早</li>
 </ul>
-<h3 id="5-http和https的区别"><a href="#5-http和https的区别" class="headerlink" title="5. http和https的区别"></a>5. http和https的区别</h3><ol>
+<h3><span id="5-http和https的区别">5. http和https的区别</span></h3><ol>
 <li><p>http的默认端口是80端口，https的默认端口是443</p>
 </li>
 <li><p>http采用的时明文传输，被接获后不安全，https采用的是加密传输，被截获时需要解密相对安全</p>
@@ -286,6 +286,11 @@
 </li>
 <li><p>7层协议，物理层，数据链路层，网络层，传输层，会话层，表示层，应用层</p>
 </li>
+</ol>
+<h3><span id="6-路由模式的区别">6. 路由模式的区别</span></h3><ol>
+<li>abstract支持所有的javascript运行环境，如node.js服务端，如果发现浏览器没有的API，路由会自动强制进入这个模式</li>
+<li>hash模式，地址栏里有#&#x2F;，底层实现是通过window.loaction.href进行跳转，通过onhashchange进行监听</li>
+<li>history模式，没有#&#x2F;，底层实现原理是通过后的historyApi实现的，history.pushState和history.repleaceState进行跳转，通过onpropState进行监听，只能监听到前进和后退，无法监听histroy.pushState和history.repleaceState，源码中将history.pushState和history.repleaceState，进行了统一的包装，通过pushState函数进行包装，不管是history.pushState，还是history.repleacState实际底层最终都是会通过pushState这个函数进行跳转的，通过pushState进行监听。</li>
 </ol>
 
       </section>
