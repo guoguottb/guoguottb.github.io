@@ -135,7 +135,35 @@
       
       
       <section class="article-entry markdown-body layout-margin content-padding--large soft-size--large soft-style--box">
-        
+        <h3><span id="1-vue3动机和优势">1. vue3动机和优势</span></h3><ol>
+<li>API设计</li>
+</ol>
+<ul>
+<li>vue3：compositionAPI，组合式API，功能逻辑写一起，方便逻辑复用对于维护和阅读更友好</li>
+<li>vue2：optionsAPI，选项式API：data&#x2F;metthods&#x2F;computed（选项），优点：新手容易上手，功能：分散在各个选项中，从而维护，阅读，逻辑的复用也不友好（mixins）</li>
+</ul>
+<ol start="2">
+<li>diif算法，vue3性能提高了很多，具体体现在给动态元素打上标记，对比虚拟dom的时候选择性对比</li>
+<li>vue3对ts支持更友好，因为底层是用ts重构的</li>
+<li>响应式原理，vue2响应式原理是通过Object.defineproperty，vue3是用的Proxy</li>
+</ol>
+<h3><span id="02-vite">02. vite</span></h3><ol>
+<li>前端构建工具，之间加载资源，遇到了模块化improt &#x3D;&gt; ESM</li>
+<li>webpack，从入口开始打包，应用显示使用，创建项目通过：npm create vite</li>
+</ol>
+<h3><span id="03-createapp">03. createApp</span></h3><ol>
+<li>创建一个应用实例，参数就是一个组件对象</li>
+<li>实例mount，参数是选择器，innerHTML</li>
+</ol>
+<h3><span id="04-compositionapi">04. compositionAPI</span></h3><ol>
+<li><p>入口函数：setup，执行机制在beforeCreate之前，里面拿不到this组件实例，return{ }，默认定义的数据，不是响应式</p>
+</li>
+<li><p>定义数据响应式，reactive：复杂数据，ref：简单&#x2F;复杂都可以，vue3.2.0之后很少用reactive，推荐使用ref，性能提升200%+</p>
+</li>
+<li><p>scrpt setup：相当于代码直接写在setup入口函数中</p>
+</li>
+</ol>
+
       </section>
 
       
