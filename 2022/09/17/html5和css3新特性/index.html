@@ -144,6 +144,35 @@
 <li>aside标签—定义侧边栏</li>
 <li>section标签—定义文档中的某个区域</li>
 </ul>
+<p>语义化标签的缺点</p>
+<p>兼容性，不兼容ie9及以下，处理方法就是将他们变成块级元素(display:block)，语义化标签在移动端能大量使用，移动端没有兼容的问题</p>
+<h3><span id="2-多媒体标签">2. 多媒体标签</span></h3><ul>
+<li>video视频标签</li>
+<li>音频标签audio</li>
+</ul>
+<h3><span id="3-input框的类型">3. input框的类型</span></h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">type=<span class="string">&quot;email&quot;</span>	<span class="comment">// 限制用户输入必须为Email类型</span></span><br><span class="line">type=<span class="string">&quot;url&quot;</span>	<span class="comment">// 限制用户输入必须为URL类型</span></span><br><span class="line">type=<span class="string">&quot;date&quot;</span>	<span class="comment">// 限制用户输入必须为日期类型</span></span><br><span class="line">type=<span class="string">&quot;time&quot;</span>	<span class="comment">// 限制用户输入必须为时间类型</span></span><br><span class="line">type=<span class="string">&quot;month&quot;</span>	<span class="comment">// 限制用户输入必须为月类型</span></span><br><span class="line">type=<span class="string">&quot;week&quot;</span>	<span class="comment">// 限制用户输入必须为周类型</span></span><br><span class="line">type=<span class="string">&quot;number&quot;</span>	<span class="comment">// 限制用户输入必须为数字类型</span></span><br><span class="line">type=<span class="string">&quot;tel&quot;</span>	<span class="comment">// 手机号码</span></span><br><span class="line">type=<span class="string">&quot;search&quot;</span>	<span class="comment">// 搜索框</span></span><br><span class="line">type=<span class="string">&quot;color&quot;</span>	<span class="comment">//生成一个颜色选择器</span></span><br></pre></td></tr></table></figure>
+
+<h3><span id="4-html5表单元素元素的新属性">4. html5表单元素元素的新属性</span></h3><ul>
+<li>required，代表该表单的值未能为空，必填，</li>
+<li>placeholder，提示文字，可以通过input::placeholder</li>
+<li>autofocus，自动聚焦</li>
+<li>autocomplete记录你之前提交成功的内容提示给你</li>
+<li>multiple，选择多个文件上传，<input type="file">默认是智能上传一个文件，添加multiple后就能多选了</li>
+</ul>
+<h3><span id="5-css3新特性">5. css3新特性</span></h3><ul>
+<li>属性选择器</li>
+<li>伪类选择器</li>
+<li>border-radius</li>
+<li>过渡动画</li>
+<li>scale缩放，transform：scale(n)，宽高都*n</li>
+</ul>
+<p>background-size</p>
+<ol>
+<li>contain包含，在图片比例不变的前提下，使任意一边填充整个元素</li>
+<li>cover覆盖，图片比例不变，但是完全覆盖元素，移除部分不显示</li>
+<li>100% 100%百分比，相对于要填充的元素</li>
+<li>px px 规定图片正好多大</li>
+</ol>
 
       </section>
 
