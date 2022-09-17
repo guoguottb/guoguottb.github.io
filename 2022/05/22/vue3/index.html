@@ -24,7 +24,7 @@
 
   
 
-  <title>vue题目 | Klein Blue Sea</title>
+  <title>vue3 | Klein Blue Sea</title>
 
   
 
@@ -100,11 +100,11 @@
     <div class="header-content">
       <div class="post-text layout-block">
         <div class="layout-margin">
-          <h1 class="title-wrap">vue题目</h1>
+          <h1 class="title-wrap">vue3</h1>
           <h2 class="title-sub-wrap">
             <strong>Guo TongBiao</strong>
             <span>发布于</span>
-            <time  class="article-date" datetime="2022-09-02T09:03:20.000Z" itemprop="datePublished">2022-09-02</time>
+            <time  class="article-date" datetime="2022-05-22T08:25:14.000Z" itemprop="datePublished">2022-05-22</time>
           </h2>
           <ul class="wrap-list dark">
   
@@ -135,76 +135,59 @@
       
       
       <section class="article-entry markdown-body layout-margin content-padding--large soft-size--large soft-style--box">
-        <h3><span id="01-computed和watch的区别">01. computed和watch的区别</span></h3><p>计算属性和watch实际上都有监听属性变化的能力。只不过计算属性可以当做Vue实例上的响应式数据使用，会自动监听计算属性函数调用到的响应式数据的变更，并且会返回计算属性函数的返回值；watcher是显式的为要监听的数据创建一个Watcher监听数据变更，不能作为vue实例上的响应式数据值使用</p>
-<h3><span id="02-vue对象新增属性的方法">02. vue对象新增属性的方法</span></h3><ol>
-<li>传统方式</li>
+        <h3><span id="1-vue3动机和优势">1. vue3动机和优势</span></h3><ol>
+<li>API设计</li>
 </ol>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div&gt;</span><br><span class="line">    &lt;div&gt;&#123;&#123;userInfo.userName&#125;&#125;&lt;/div&gt;</span><br><span class="line">    &lt;div&gt;&#123;&#123;userInfo.userAge&#125;&#125;&lt;/div&gt;</span><br><span class="line">    &lt;button @click=&quot;showUserAge&quot;&gt;显示年龄&lt;/button&gt;</span><br><span class="line">    &lt;button @click=&quot;increaseUserAge&quot;&gt;增加年龄&lt;/button&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">  export default &#123;</span><br><span class="line">    name: &quot;test&quot;,</span><br><span class="line">    data() &#123;</span><br><span class="line">      return &#123;</span><br><span class="line">        userInfo: &#123;</span><br><span class="line">          userName: &#x27;test&#x27;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    methods: &#123;</span><br><span class="line">      showUserAge() &#123;</span><br><span class="line">        this.userInfo.userAge = 18; //传统的添加属性的方法</span><br><span class="line">        console.log(this.userInfo);</span><br><span class="line">      &#125;,</span><br><span class="line">      increaseUserAge() &#123;</span><br><span class="line">        this.userInfo.userAge++;</span><br><span class="line">        console.log(this.userInfo);</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-
+<ul>
+<li>vue3：compositionAPI，组合式API，功能逻辑写一起，方便逻辑复用对于维护和阅读更友好</li>
+<li>vue2：optionsAPI，选项式API：data&#x2F;metthods&#x2F;computed（选项），优点：新手容易上手，功能：分散在各个选项中，从而维护，阅读，逻辑的复用也不友好（mixins）</li>
+</ul>
 <ol start="2">
-<li>使用 this.$set(object,key,value)</li>
+<li>diif算法，vue3性能提高了很多，具体体现在给动态元素打上标记，对比虚拟dom的时候选择性对比</li>
+<li>vue3对ts支持更友好，因为底层是用ts重构的</li>
+<li>响应式原理，vue2响应式原理是通过Object.defineproperty，vue3是用的Proxy</li>
 </ol>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">methods</span>: &#123;</span><br><span class="line">     <span class="title function_">showUserAge</span>(<span class="params"></span>) &#123;</span><br><span class="line">       <span class="comment">//this.userInfo.userAge = 18;</span></span><br><span class="line">       <span class="variable language_">this</span>.$set(<span class="variable language_">this</span>.<span class="property">userInfo</span>, <span class="string">&#x27;userAge&#x27;</span>, <span class="number">18</span>);  <span class="comment">//使用this.$set(object,key,value)</span></span><br><span class="line">       <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>.<span class="property">userInfo</span>);</span><br><span class="line">     &#125;,</span><br><span class="line">     <span class="title function_">increaseUserAge</span>(<span class="params"></span>) &#123;</span><br><span class="line">       <span class="variable language_">this</span>.<span class="property">userInfo</span>.<span class="property">userAge</span>++;</span><br><span class="line">       <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>.<span class="property">userInfo</span>);</span><br><span class="line">     &#125;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
-
-<h3><span id="3-keep-alive原理">3. keep-alive原理</span></h3><blockquote>
-<p>概念</p>
-</blockquote>
-<p>keep-alive是一个抽象组件：它自身不会渲染一个 DOM 元素，也不会出现在父组件链中；使用keep-alive包裹动态组件时，会缓存不活动的组件实例，而不是销毁它们。</p>
-<blockquote>
-<p>应用场景</p>
-</blockquote>
-<p>用户在某个列表页面选择筛选条件过滤出一份数据列表，由列表页面进入数据详情页面，再返回该列表页面，我们希望：列表页面可以保留用户的筛选（或选中）状态。keep-alive就是用来解决这种场景。当然keep-alive不仅仅是能够保存页面&#x2F;组件的状态这么简单，它还可以避免组件反复创建和渲染，有效提升系统性能。 总的来说，keep-alive用于保存组件的渲染状态。</p>
-<blockquote>
-<p>用法</p>
-</blockquote>
-<ol>
-<li>在动态组件中的应用</li>
+<h3><span id="02-vite">02. vite</span></h3><ol>
+<li>前端构建工具，之间加载资源，遇到了模块化improt &#x3D;&gt; ESM</li>
+<li>webpack，从入口开始打包，应用显示使用，创建项目通过：npm create vite</li>
 </ol>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">keep-alive</span> <span class="attr">:include</span>=<span class="string">&quot;whiteList&quot;</span> <span class="attr">:exclude</span>=<span class="string">&quot;blackList&quot;</span> <span class="attr">:max</span>=<span class="string">&quot;amount&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">component</span> <span class="attr">:is</span>=<span class="string">&quot;currentComponent&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">component</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">keep-alive</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<ol start="2">
-<li>在vue-router中的应用</li>
+<h3><span id="03-createapp">03. createApp</span></h3><ol>
+<li>创建一个应用实例，参数就是一个组件对象</li>
+<li>实例mount，参数是选择器，innerHTML</li>
 </ol>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">keep-alive</span> <span class="attr">:include</span>=<span class="string">&quot;whiteList&quot;</span> <span class="attr">:exclude</span>=<span class="string">&quot;blackList&quot;</span> <span class="attr">:max</span>=<span class="string">&quot;amount&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">router-view</span>&gt;</span><span class="tag">&lt;/<span class="name">router-view</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">keep-alive</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p><code>include</code>定义缓存白名单，keep-alive会缓存命中的组件；<code>exclude</code>定义缓存黑名单，被命中的组件将不会被缓存；<code>max</code>定义缓存组件上限，超出上限使用<a href="https://link.juejin.cn/?target=https://baike.baidu.com/item/LRU">LRU的策略</a>置换缓存数据。</p>
-<blockquote>
-<p>部分源码 由于太多懒得搬运</p>
-</blockquote>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// src/core/components/keep-alive.js</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">  <span class="attr">name</span>: <span class="string">&#x27;keep-alive&#x27;</span>,</span><br><span class="line">  <span class="attr">abstract</span>: <span class="literal">true</span>, <span class="comment">// 判断当前组件虚拟dom是否渲染成真是dom的关键</span></span><br><span class="line"></span><br><span class="line">  <span class="attr">props</span>: &#123;</span><br><span class="line">    <span class="attr">include</span>: patternTypes, <span class="comment">// 缓存白名单</span></span><br><span class="line">    <span class="attr">exclude</span>: patternTypes, <span class="comment">// 缓存黑名单</span></span><br><span class="line">    <span class="attr">max</span>: [<span class="title class_">String</span>, <span class="title class_">Number</span>] <span class="comment">// 缓存的组件实例数量上限</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3><span id="4-nexttick原理">4. nextTick原理</span></h3><blockquote>
-<p>为什么会有nextTick这个东西的存在?</p>
-</blockquote>
-<ul>
-<li>因为 vue 采用的<strong>异步更新策略</strong>，当监听到数据发生变化的时候不会立即去更新DOM，<br> 而是开启一个任务队列，并缓存在同一事件循环中发生的所有数据变更;<br> 这种做法带来的好处就是可以将多次数据更新合并成一次，减少操作DOM的次数，<br> 如果不采用这种方法，假设数据改变100次就要去更新100次DOM，而频繁的DOM更新是很耗性能的；</li>
+<h3><span id="04-compositionapi">04. compositionAPI</span></h3><ol>
+<li>入口函数：setup，执行机制在beforeCreate之前，里面拿不到this组件实例，return{ }，默认定义的数据，不是响应式</li>
+<li>定义数据响应式，reactive：复杂数据，ref：简单&#x2F;复杂都可以，vue3.2.0之后很少用reactive，推荐使用ref，性能提升200%+</li>
+<li>scrpt setup：相当于代码直接写在setup入口函数中，无需return，vue3.2.0才支持</li>
+<li>computed，本质是一个函数，需要引进来调用即可参数是函数（回调函数），进行逻辑的计算，并且返回值</li>
+<li>computed函数返回值就可以获取到</li>
+<li>参数：还可以是一个对象，get：计算属性读的数据，set，当要修改计算属性的时候会触发改函数</li>
+</ol>
+<h3><span id="05-watch">05. watch</span></h3><ul>
+<li>参数一，监听一个数据，直接写对应的数据，监听多个数据用 [ ]，监听对象中的某个属性用函数 return 将其返回</li>
+<li>参数二，回调函数，当所监视的数据发生变化时执行的回调函数</li>
+<li>参数三，是一个对象，监视配置，例如 deep 深度监听 ，首次监听</li>
+<li>本质是一个函数，需要组合式API引入watch函数，其函数有三个参数</li>
 </ul>
-<blockquote>
-<p>nextTick的作用</p>
-</blockquote>
-<ul>
-<li>nextTick 接收一个回调函数作为参数，并将这个回调函数延迟到DOM更新后才执行；<br><strong>使用场景</strong>：想要操作 <em>基于最新数据生成的DOM</em> 时，就将这个操作放在 nextTick 的回调中；</li>
+<h3><span id="06-生命周期函数">06. 生命周期函数</span></h3><ul>
+<li>beforeCreate，created &#x3D;&gt; setup（一个选项）</li>
+<li>beforeMount，mounted，beforeUpdata,updated &#x3D;&gt; 前面加一个on，本质是个函数</li>
+<li>beforeDestroy，destroyed ，onBeforeUnMount &#x3D;&gt; onUnMounted</li>
 </ul>
-<blockquote>
-<p>nextTick实现原理</p>
-</blockquote>
-<ul>
-<li>将传入的回调函数包装成异步任务，异步任务又分微任务和宏任务，为了尽快执行所以优先选择微任务；</li>
-<li>nextTick 提供了四种异步方法 Promise.then、MutationObserver、setImmediate、setTimeout(fn,0)</li>
-</ul>
-<h3><span id="05-发布订阅模式">05.  发布订阅模式</span></h3><blockquote>
-<p>概念</p>
-</blockquote>
-<p>发布-订阅模式其实就是一种对象间一对多的依赖关系，当一个对象的状态发生改变时，所有依赖于它的对象都将得到状态改变的通知，多方订阅 &gt; 一方发布，订阅方会收到通知</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">EvtBus</span> &#123;</span><br><span class="line">  <span class="title function_">constructor</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">listenEvent</span> = &#123;&#125;;</span><br><span class="line">  &#125;</span><br><span class="line">  $on = <span class="keyword">function</span> (<span class="params">eventKey, callback</span>) &#123;</span><br><span class="line">    <span class="keyword">if</span> (!<span class="variable language_">this</span>.<span class="property">listenEvent</span>[eventKey]) &#123;</span><br><span class="line">      <span class="variable language_">this</span>.<span class="property">listenEvent</span>[eventKey] = [callback];</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      <span class="variable language_">this</span>.<span class="property">listenEvent</span>[eventKey].<span class="title function_">push</span>(callback);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>.<span class="property">listenEvent</span>);</span><br><span class="line">  &#125;;</span><br><span class="line">  $emit = <span class="keyword">function</span> (<span class="params">eventKey, payload</span>) &#123;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">listenEvent</span>[eventKey].<span class="title function_">forEach</span>(<span class="function">(<span class="params">item</span>) =&gt;</span> &#123;</span><br><span class="line">      <span class="title function_">item</span>();</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> eventBus = <span class="keyword">new</span> <span class="title class_">EvtBus</span>();</span><br><span class="line"><span class="comment">// $on 事件注册第一个参数是事件名，第二个参数是回调函数</span></span><br><span class="line">eventBus.$on(<span class="string">&quot;getName&quot;</span>, <span class="function">() =&gt;</span> &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;老板名字叫张三&quot;</span>);</span><br><span class="line">&#125;);</span><br><span class="line">eventBus.$on(<span class="string">&quot;getName&quot;</span>, <span class="function">() =&gt;</span> &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;老板名字叫李四&quot;</span>);</span><br><span class="line">&#125;);</span><br><span class="line">eventBus.$on(<span class="string">&quot;getName&quot;</span>, <span class="function">() =&gt;</span> &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;老板名字叫王五&quot;</span>);</span><br><span class="line">&#125;);</span><br><span class="line">eventBus.$on(<span class="string">&quot;getAge&quot;</span>, <span class="function">() =&gt;</span> &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;永远80岁&quot;</span>);</span><br><span class="line">&#125;);</span><br><span class="line">eventBus.$emit(<span class="string">&quot;getName&quot;</span>, <span class="string">&quot;ok&quot;</span>);</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h3><span id="06-虚拟dom">06.  虚拟dom</span></h3><ol>
-<li>虚拟dom本质就是一个js对象，用来描述真正的dom是什么样子的，这个对象就是虚拟dom</li>
-<li>虚拟dom可以高效的更新页面，同时可以使用虚拟dom进行跨平台</li>
-<li>初始化渲染的适合，会根据数据和模板生成一份虚拟dom树，当数据发生变化，会根据新的数据和模板生成新的虚拟dom树，这时候就出现了两颗虚拟dom，然后通过diff算法对这两颗虚拟dom进行比较</li>
+<h3><span id="07-组件通信">07. 组件通信</span></h3><ol>
+<li>父向子，通过属性绑定，子组件通过defineProps，</li>
+<li>子向父，父组件 @定义自定义事件，子组件 defineEmite([ 约定事件名 ])，通过函数回调执行 emit（”事件名”，所传参数）</li>
+<li>跨组件（组件间必须有联系，例如给子孙组件传值），传数据的组件通过 Provide（”名字”，数据）传递参数，后代组件通过 inject（”名字”）返回值获取到数据</li>
+<li>ref，ref可以将数据转化为响应式的，同时也可以获取到dom或者组件，首先通过ref创建个空响应数据，在给dom&#x2F;组件绑定上ref等于定义的变量名</li>
+<li>想要拿到组件内部的数据和方法，可以通过ref绑定组件</li>
 </ol>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123; <span class="attr">type</span>:<span class="string">&#x27;div&#x27;</span>,<span class="attr">props</span>:&#123; <span class="attr">id</span>:<span class="string">&#x27;box&#x27;</span>,<span class="attr">class</span>:<span class="string">&#x27;main-box&#x27;</span>&#125;,<span class="attr">children</span>:[&#123;... &#125;] &#125;</span><br></pre></td></tr></table></figure>
-
+<h3><span id="08-vue3是废弃到了过滤器">08. vue3是废弃到了过滤器</span></h3><ul>
+<li>所使用过滤器的话就是在js标签内定义一个方法，然后通过传参的方式将成功过滤的据 return 返回，让在模板中通过插值表达式直接使用函数传参即可</li>
+</ul>
+<h3><span id="09-vue-router">09.  vue-router</span></h3><ul>
+<li>创建路由实例是通过  import { createRouter } fom “vue-router”，中的 createRouter函数内部配置对象，该函数有个返回值 router，挂载到 vue实例上即可，路由模式配置，history：createWebHashHistory() || createWebHistory()</li>
+<li>获取路由信息，当前的路由信息，在组件中 useRoute &#x3D;&gt; import { useRoute } from “vue-router”，const route &#x3D; userRoute()，路由实例，useRouter &#x3D;&gt; import { useRouter } from “vue-router”，const router &#x3D; useRouter()</li>
+</ul>
 
       </section>
 
@@ -217,8 +200,8 @@
     
     <div class="card-text">
       
-        <a href="/2022/09/02/js%E9%A2%98%E7%9B%AE/" itemprop="url">
-          <h2 class="card-text--title text-ellipsis">js题目</h2>
+        <a href="/2022/07/17/ts/" itemprop="url">
+          <h2 class="card-text--title text-ellipsis">ts</h2>
         </a>
       
       <div class="card-text--row">Newer</div>
@@ -230,12 +213,10 @@
             <div class="article-nav-item layout-padding">
   <article class="card-container article-nav-card content-padding--primary soft-size--large soft-style--box">
     
-      <div class="card-cover" background-image-lazy data-img="https://cloud.miiiku.xyz/src/images/cover/cover-02.jpg-webp"></div>
-    
     <div class="card-text">
       
-        <a href="/2022/09/01/%E6%8F%92%E5%85%A5%E5%9B%BE%E7%89%87%EF%BC%8C%E9%9F%B3%E9%A2%91%E5%92%8C%E8%A7%86%E9%A2%91/" itemprop="url">
-          <h2 class="card-text--title text-ellipsis">测试了图片，音频和视频</h2>
+        <a href="/2022/03/11/%E6%B5%8F%E8%A7%88%E5%99%A8/" itemprop="url">
+          <h2 class="card-text--title text-ellipsis">浏览器</h2>
         </a>
       
       <div class="card-text--row">Older</div>

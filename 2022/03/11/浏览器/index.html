@@ -24,7 +24,7 @@
 
   
 
-  <title>webpack | Klein Blue Sea</title>
+  <title>浏览器 | Klein Blue Sea</title>
 
   
 
@@ -100,15 +100,13 @@
     <div class="header-content">
       <div class="post-text layout-block">
         <div class="layout-margin">
-          <h1 class="title-wrap">webpack</h1>
+          <h1 class="title-wrap">浏览器</h1>
           <h2 class="title-sub-wrap">
             <strong>Guo TongBiao</strong>
             <span>发布于</span>
-            <time  class="article-date" datetime="2022-09-17T03:23:13.000Z" itemprop="datePublished">2022-09-17</time>
+            <time  class="article-date" datetime="2022-03-11T03:07:50.000Z" itemprop="datePublished">2022-03-11</time>
           </h2>
           <ul class="wrap-list dark">
-  
-    <li><a href="/categories/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0/">📒 前端学习</a></li>
   
 </ul>
           <ul class="wrap-list dark">
@@ -137,7 +135,166 @@
       
       
       <section class="article-entry markdown-body layout-margin content-padding--large soft-size--large soft-style--box">
-        
+        <h3><span id="01-三次握手四次挥手">01. 三次握手，四次挥手</span></h3><p>客户端和服务器之间建立连接需要经过<strong>三次确认</strong>的阶段，我们称之为<code>TCP</code>的三次握手</p>
+<ul>
+<li>三次握手</li>
+</ul>
+<ol>
+<li>第一次握手：客户端发送一个<code>syn</code>报文，设置发送序号为<code>X</code>，客户端进入<code>SYN_SENT</code>状态，等待服务器回应。</li>
+<li>第二次握手：服务端收到<code>syn</code>报文，但是服务端必须确定客户端的<code>syn(ack= X + 1)</code>, 因此服务端也要发送一个<code>syn=Y</code>给客户端进行确认，表示服务端已经收到客户端的请求。服务端需要发送<code>ack+syn</code>给客户端，此时服务器进入<code>SYN_RECV</code>状态</li>
+<li>第三次握手：客户端收到服务器的<code>syn+ack</code>包，向服务器发送确认包<code>ack(ack=Y+1）</code>，此包发送完毕，客户端和服务器进入<code>ESTABLISHED</code>（<code>TCP</code>连接成功）状态，完成三次握手。</li>
+</ol>
+<ul>
+<li>四次挥手</li>
+</ul>
+<ol>
+<li><code>TCP</code>客户端发送一个<code>FIN</code>，用来关闭客户到服务器的数据传送。</li>
+<li>服务器收到这个<code>FIN</code>，它发回一个<code>ACK</code>，确认序号为收到的序号加1。和<code>SYN</code>一样，一个<code>FIN</code>将占用一个序号。</li>
+<li>服务器关闭客户端的连接，发送一个<code>FIN</code>给客户端。</li>
+<li>客户端发回<code>ACK</code>报文确认，并将确认序号设置为收到序号加1。</li>
+</ol>
+<h3><span id="02-cookie-localstorage和sessionstorage-三者之间的区别以及存储-获取-删除等使用方式">02. cookie、localStorage和sessionStorage 三者之间的区别以及存储、获取、删除等使用方式</span></h3><blockquote>
+<p>概念</p>
+</blockquote>
+<p>前端开发的时候，在网页刷新的时候，所有数据都会被清空，这时候就要用到本地存储的技术，前端本地存储的方式有三种，分别是cookie，localstorage和sessionStorage ，这是大家都知道的。</p>
+<blockquote>
+<p>使用方式</p>
+</blockquote>
+<ol>
+<li><p>cookie</p>
+</li>
+<li><p>localStorage 和 sessionStorage<strong>所使用的方法是一样的</strong>，下面以sessionStorage为栗子：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">sessionStorage.<span class="title function_">setItem</span>(name,num);<span class="comment">//存储数据</span></span><br><span class="line"><span class="keyword">let</span> dataAll = sessionStorage.<span class="title function_">valueOf</span>();<span class="comment">//获取全部数据</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(dataAll,<span class="string">&#x27;获取全部数据&#x27;</span>);</span><br><span class="line"><span class="keyword">var</span> dataSession = sessionStorage.<span class="title function_">getItem</span>(name);<span class="comment">//获取指定键名数据</span></span><br><span class="line">sessionStorage.<span class="title function_">removeItem</span>(name); <span class="comment">//删除指定键名数据</span></span><br><span class="line">sessionStorage.<span class="title function_">clear</span>();<span class="comment">//清空缓存数据：localStorage.clear();</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>生命周期</p>
+</blockquote>
+</li>
+<li><p>cookie：可设置失效时间，没有设置的话，默认是关闭浏览器后失效。</p>
+</li>
+<li><p>localStorage：除非被手动清除，否则将会永久保存。</p>
+</li>
+<li><p>sessionStorage： 仅在当前网页会话下有效，关闭页面或浏览器后就会被清除。</p>
+</li>
+</ol>
+<blockquote>
+<p>存放数据大小：</p>
+</blockquote>
+<ol>
+<li>cookie：4KB左右</li>
+<li>localStorage和sessionStorage：可以保存5MB的信息。</li>
+</ol>
+<blockquote>
+<p> http请求：</p>
+</blockquote>
+<ol>
+<li>cookie：每次都会携带在HTTP头中，如果使用cookie保存过多数据会带来性能问题</li>
+<li>localStorage和sessionStorage：仅在客户端（即浏览器）中保存，不参与和服务器的通信</li>
+</ol>
+<blockquote>
+<p>易用性</p>
+</blockquote>
+<ol>
+<li>cookie：需要程序员自己封装，源生的Cookie接口不友好</li>
+<li>localStorage和sessionStorage：源生接口可以接受，亦可再次封装来对Object和Array有更好的支持</li>
+</ol>
+<blockquote>
+<p>应用场景</p>
+</blockquote>
+<ol>
+<li>从安全性来说，因为每次http请求都会携带cookie信息，这样无形中浪费了带宽，所以cookie应该尽可能少的使用，另外cookie还需要指定作用域，不可以跨域调用，限制比较多。但是用来识别用户登录来说，cookie还是比storage更好用的。其他情况下，可以使用storage，就用storage。</li>
+<li>storage在存储数据的大小上面秒杀了cookie，现在基本上很少使用cookie了，因为更大总是更好的，哈哈哈你们懂得。</li>
+<li>localStorage和sessionStorage唯一的差别一个是永久保存在浏览器里面，一个是关闭网页就清除了信息。localStorage可以用来跨页面传递参数，sessionStorage用来保存一些临时的数据，防止用户刷新页面之后丢失了一些参数。</li>
+</ol>
+<h3><span id="03-怎么解决跨域">03. 怎么解决跨域</span></h3><blockquote>
+<p>概念</p>
+</blockquote>
+<p><strong>CORS全称</strong>Cross-Origin Resource Sharing，意为跨域资源共享。当一个资源去访问另一个不同域名或者同域名不同端口的资源时，就会发出跨域请求。如果此时另一个资源不允许其进行跨域资源访问，那么访问就会遇到跨域问题。简单来说就是只要协议，域名，端口有一个不同就会出现跨域问题。</p>
+<ol>
+<li><strong>跨域方案之CORS</strong></li>
+</ol>
+<ul>
+<li>通过服务器设置一系列响应头来实现跨域</li>
+<li>第三方模块CORS来解决跨域问题</li>
+<li>下载安装CORS：npm install cors</li>
+<li>加载cors: const cors &#x3D; require(“cors”)</li>
+<li>注册为中间件：app.use(cors())</li>
+<li>中间件需要注册在其他中间件之前</li>
+</ul>
+<ol start="2">
+<li><strong>跨域方案之JSONP</strong></li>
+</ol>
+<ul>
+<li>JSONP方案之支持GET请求</li>
+<li>JSONP没有浏览器兼容问题，任何浏览器都支持</li>
+<li>HTML标签的src属性，不受跨域访问的影响，没有跨域问题</li>
+<li>JSONP的实现：</li>
+<li>客户端先准备一个函数，比如 abc，并且设置好形参，准备接收响应数据客户端通过script标签的src属性，向接口发送请求，并传递 callback&#x3D;abc 参数服务端响应一个字符串 abc({ “status”: 0, “message”: “登录成功” })客户端将服务器返回的字符串当做JS代码解释，从而实现跨域</li>
+</ul>
+<ol start="3">
+<li>跨域问题之本地服务器代理</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">vue.<span class="property">config</span>.<span class="property">js</span></span><br><span class="line"></span><br><span class="line"><span class="attr">devServer</span>: &#123;</span><br><span class="line">	<span class="attr">proxy</span>: &#123;</span><br><span class="line">		<span class="string">&#x27;/api&#x27;</span>: &#123;</span><br><span class="line">			<span class="attr">target</span>: <span class="string">&#x27;接口url地址&#x27;</span></span><br><span class="line">        &#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3><span id="3-http常见的状态码有哪些">3. http常见的状态码有哪些</span></h3><blockquote>
+<p>概念</p>
+</blockquote>
+<p>HTTP 状态码是服务器端返回给客户端的响应状态码，根据（HTTP）状态码我们就能知道服务器端想要给客户端表达的具体含义，比如 200 就表示请求访问成功，500 就表示服务器端程序出错等。</p>
+<p>HTTP 状态码可分为 5 大类：</p>
+<ul>
+<li>1XX：消息状态码</li>
+<li>2XX：成功状态码</li>
+<li>3XX：重定向状态码</li>
+<li>4XX：客户端错误状态码</li>
+<li>5XX：服务端错误状态码</li>
+</ul>
+<blockquote>
+<p>总结</p>
+</blockquote>
+<p>HTTP 状态码分为 5 大类：1XX：表示消息状态码；2XX：表示成功状态码；3XX：表示重定向状态码；4XX：表示客户端错误状态码；5XX：表示服务端错误状态码。其中常见的具体状态码有：200：请求成功；301：永久重定向；302：临时重定向；303：查看其它地址；304：所请求的资源未修改，不返回任何资源，请走浏览器缓存。404：无法找到此页面；405：请求的方法类型不支持；500：服务器内部出错。</p>
+<h3><span id="4-地址栏输入url的过程">4. 地址栏输入url的过程</span></h3><ol>
+<li>url解析：是合法url还是搜索关键词</li>
+<li>dns解析：本地&#x2F;dns服务器，把url地址解析成IP地址的过程就是DNS解析</li>
+<li>TCP连接：通过ip地址&#x2F;3次握手</li>
+</ol>
+<ul>
+<li>服务端确认了客户端发送能力，和服务端自己的接受能力</li>
+<li>客户端确认了服务端的发送能力和接收能力，此时服务端还不知道客户端的接受能力</li>
+<li>服务端确认了客户端的接收能力，开始进行连接</li>
+</ul>
+<ol start="4">
+<li>发送http请求</li>
+<li>响应请求</li>
+<li>页面渲染，html生成dom树，style生成css规则树，dom树和css规则树生成render树，render树进行layout（谷歌重排）&#x2F;reflow（火狐回流），render树上的paint和paint setup事件将render树绘制为像素信息</li>
+<li>断开链接，是否有keep-alive，有：关闭网页断开，网页运行期间，如果有新的请求不会重新链接即重新三次握手，没有keep-alive；客户端请求完之后立马断开链接，下次请求的话需要重新进行三次握手</li>
+<li>4次挥手</li>
+</ol>
+<ul>
+<li>客户端发送断开链接，进入等待状态，客户端进程发送链接释放的FIN&#x3D;1包</li>
+<li>服务端同意，响应服务端收到FIN之后，如果同意断开链接就会发送一个ACK确认，ACK&#x3D;1，根据规定确认ack&#x3D;u+1，然后带上一个随机生成的序列号seq&#x3D;v。此时处于半链接状态，有可能服务端还有数据没有发完，所以继续发送未发完的数据</li>
+<li>服务端发送完成之后进入等待状态，通知客户端可以断开练级了</li>
+<li>客户端确认收到数据，服务端只要收到客户端发出的确认就进入关闭状态。服务器结束TCP链接的时间要比客户端早</li>
+</ul>
+<h3><span id="5-http和https的区别">5. http和https的区别</span></h3><ol>
+<li><p>http的默认端口是80端口，https的默认端口是443</p>
+</li>
+<li><p>http采用的时明文传输，被接获后不安全，https采用的是加密传输，被截获时需要解密相对安全</p>
+</li>
+<li><p>ssl证书，ssl证书就是遵守ssl协议（他是在传输通讯协议（TCP&#x2F;IP）上实现的一种安全协议，采用公开密钥技术），由受信任的数组证书颁发机构CA，在验证服务器身份后颁发，具有服务器身份验证和数据传输加密功能，所以说http没有ssl，https有ssl证书</p>
+</li>
+<li><p>http：基于七层协议中的应用层（提供应用程序间的交换和数据交换）</p>
+</li>
+<li><p>https：基于7层协议中的传输层（传输层协议提供计算机之间的通信会话，并确保数据在计算机之间可靠的传输）</p>
+</li>
+<li><p>7层协议，物理层，数据链路层，网络层，传输层，会话层，表示层，应用层</p>
+</li>
+</ol>
+<h3><span id="6-路由模式的区别">6. 路由模式的区别</span></h3><ol>
+<li>abstract支持所有的javascript运行环境，如node.js服务端，如果发现浏览器没有的API，路由会自动强制进入这个模式</li>
+<li>hash模式，地址栏里有#&#x2F;，底层实现是通过window.loaction.href进行跳转，通过onhashchange进行监听</li>
+<li>history模式，没有#&#x2F;，底层实现原理是通过后的historyApi实现的，history.pushState和history.repleaceState进行跳转，通过onpropState进行监听，只能监听到前进和后退，无法监听histroy.pushState和history.repleaceState，源码中将history.pushState和history.repleaceState，进行了统一的包装，通过pushState函数进行包装，不管是history.pushState，还是history.repleacState实际底层最终都是会通过pushState这个函数进行跳转的，通过pushState进行监听。</li>
+</ol>
+
       </section>
 
       
@@ -147,12 +304,10 @@
             <div class="article-nav-item layout-padding">
   <article class="card-container article-nav-card content-padding--primary soft-size--large soft-style--box">
     
-      <div class="card-cover" background-image-lazy data-img="https://cloud.miiiku.xyz/src/images/cover/cover-11.jpg?x-oss-process=style/webp"></div>
-    
     <div class="card-text">
       
-        <a href="/2022/09/17/MDN%E6%96%B9%E6%B3%95/" itemprop="url">
-          <h2 class="card-text--title text-ellipsis">MDN方法</h2>
+        <a href="/2022/05/22/vue3/" itemprop="url">
+          <h2 class="card-text--title text-ellipsis">vue3</h2>
         </a>
       
       <div class="card-text--row">Newer</div>
@@ -166,8 +321,8 @@
     
     <div class="card-text">
       
-        <a href="/2022/09/17/ts/" itemprop="url">
-          <h2 class="card-text--title text-ellipsis">ts</h2>
+        <a href="/2022/03/09/js/" itemprop="url">
+          <h2 class="card-text--title text-ellipsis">js</h2>
         </a>
       
       <div class="card-text--row">Older</div>

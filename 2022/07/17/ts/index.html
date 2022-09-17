@@ -24,7 +24,7 @@
 
   
 
-  <title>vue3 | Klein Blue Sea</title>
+  <title>ts | Klein Blue Sea</title>
 
   
 
@@ -100,13 +100,15 @@
     <div class="header-content">
       <div class="post-text layout-block">
         <div class="layout-margin">
-          <h1 class="title-wrap">vue3</h1>
+          <h1 class="title-wrap">ts</h1>
           <h2 class="title-sub-wrap">
             <strong>Guo TongBiao</strong>
             <span>发布于</span>
-            <time  class="article-date" datetime="2022-09-11T08:25:14.000Z" itemprop="datePublished">2022-09-11</time>
+            <time  class="article-date" datetime="2022-07-17T01:03:35.000Z" itemprop="datePublished">2022-07-17</time>
           </h2>
           <ul class="wrap-list dark">
+  
+    <li><a href="/categories/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0/">📒 前端学习</a></li>
   
 </ul>
           <ul class="wrap-list dark">
@@ -135,59 +137,7 @@
       
       
       <section class="article-entry markdown-body layout-margin content-padding--large soft-size--large soft-style--box">
-        <h3><span id="1-vue3动机和优势">1. vue3动机和优势</span></h3><ol>
-<li>API设计</li>
-</ol>
-<ul>
-<li>vue3：compositionAPI，组合式API，功能逻辑写一起，方便逻辑复用对于维护和阅读更友好</li>
-<li>vue2：optionsAPI，选项式API：data&#x2F;metthods&#x2F;computed（选项），优点：新手容易上手，功能：分散在各个选项中，从而维护，阅读，逻辑的复用也不友好（mixins）</li>
-</ul>
-<ol start="2">
-<li>diif算法，vue3性能提高了很多，具体体现在给动态元素打上标记，对比虚拟dom的时候选择性对比</li>
-<li>vue3对ts支持更友好，因为底层是用ts重构的</li>
-<li>响应式原理，vue2响应式原理是通过Object.defineproperty，vue3是用的Proxy</li>
-</ol>
-<h3><span id="02-vite">02. vite</span></h3><ol>
-<li>前端构建工具，之间加载资源，遇到了模块化improt &#x3D;&gt; ESM</li>
-<li>webpack，从入口开始打包，应用显示使用，创建项目通过：npm create vite</li>
-</ol>
-<h3><span id="03-createapp">03. createApp</span></h3><ol>
-<li>创建一个应用实例，参数就是一个组件对象</li>
-<li>实例mount，参数是选择器，innerHTML</li>
-</ol>
-<h3><span id="04-compositionapi">04. compositionAPI</span></h3><ol>
-<li>入口函数：setup，执行机制在beforeCreate之前，里面拿不到this组件实例，return{ }，默认定义的数据，不是响应式</li>
-<li>定义数据响应式，reactive：复杂数据，ref：简单&#x2F;复杂都可以，vue3.2.0之后很少用reactive，推荐使用ref，性能提升200%+</li>
-<li>scrpt setup：相当于代码直接写在setup入口函数中，无需return，vue3.2.0才支持</li>
-<li>computed，本质是一个函数，需要引进来调用即可参数是函数（回调函数），进行逻辑的计算，并且返回值</li>
-<li>computed函数返回值就可以获取到</li>
-<li>参数：还可以是一个对象，get：计算属性读的数据，set，当要修改计算属性的时候会触发改函数</li>
-</ol>
-<h3><span id="05-watch">05. watch</span></h3><ul>
-<li>参数一，监听一个数据，直接写对应的数据，监听多个数据用 [ ]，监听对象中的某个属性用函数 return 将其返回</li>
-<li>参数二，回调函数，当所监视的数据发生变化时执行的回调函数</li>
-<li>参数三，是一个对象，监视配置，例如 deep 深度监听 ，首次监听</li>
-<li>本质是一个函数，需要组合式API引入watch函数，其函数有三个参数</li>
-</ul>
-<h3><span id="06-生命周期函数">06. 生命周期函数</span></h3><ul>
-<li>beforeCreate，created &#x3D;&gt; setup（一个选项）</li>
-<li>beforeMount，mounted，beforeUpdata,updated &#x3D;&gt; 前面加一个on，本质是个函数</li>
-<li>beforeDestroy，destroyed ，onBeforeUnMount &#x3D;&gt; onUnMounted</li>
-</ul>
-<h3><span id="07-组件通信">07. 组件通信</span></h3><ol>
-<li>父向子，通过属性绑定，子组件通过defineProps，</li>
-<li>子向父，父组件 @定义自定义事件，子组件 defineEmite([ 约定事件名 ])，通过函数回调执行 emit（”事件名”，所传参数）</li>
-<li>跨组件（组件间必须有联系，例如给子孙组件传值），传数据的组件通过 Provide（”名字”，数据）传递参数，后代组件通过 inject（”名字”）返回值获取到数据</li>
-<li>ref，ref可以将数据转化为响应式的，同时也可以获取到dom或者组件，首先通过ref创建个空响应数据，在给dom&#x2F;组件绑定上ref等于定义的变量名</li>
-<li>想要拿到组件内部的数据和方法，可以通过ref绑定组件</li>
-</ol>
-<h3><span id="08-vue3是废弃到了过滤器">08. vue3是废弃到了过滤器</span></h3><ul>
-<li>所使用过滤器的话就是在js标签内定义一个方法，然后通过传参的方式将成功过滤的据 return 返回，让在模板中通过插值表达式直接使用函数传参即可</li>
-</ul>
-<h3><span id="09-vue-router">09.  vue-router</span></h3><ul>
-<li>创建路由实例是通过  import { createRouter } fom “vue-router”，中的 createRouter函数内部配置对象，该函数有个返回值 router，挂载到 vue实例上即可，路由模式配置，history：createWebHashHistory() || createWebHistory()</li>
-<li>获取路由信息，当前的路由信息，在组件中 useRoute &#x3D;&gt; import { useRoute } from “vue-router”，const route &#x3D; userRoute()，路由实例，useRouter &#x3D;&gt; import { useRouter } from “vue-router”，const router &#x3D; useRouter()</li>
-</ul>
+        <p>创建vite&#x2F;ts项目：npm create vite 文件名</p>
 
       </section>
 
@@ -200,8 +150,8 @@
     
     <div class="card-text">
       
-        <a href="/2022/09/17/ts/" itemprop="url">
-          <h2 class="card-text--title text-ellipsis">ts</h2>
+        <a href="/2022/08/30/hello-world/" itemprop="url">
+          <h2 class="card-text--title text-ellipsis">Hello World</h2>
         </a>
       
       <div class="card-text--row">Newer</div>
@@ -215,8 +165,8 @@
     
     <div class="card-text">
       
-        <a href="/2022/09/02/promise%E6%BA%90%E7%A0%81/" itemprop="url">
-          <h2 class="card-text--title text-ellipsis">promise源码</h2>
+        <a href="/2022/05/22/vue3/" itemprop="url">
+          <h2 class="card-text--title text-ellipsis">vue3</h2>
         </a>
       
       <div class="card-text--row">Older</div>
