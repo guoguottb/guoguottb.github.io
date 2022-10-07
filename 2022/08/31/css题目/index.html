@@ -247,6 +247,13 @@
 </ol>
 <h3><span id="12-css画三角形等边三角形">12. css画三角形(等边三角形)</span></h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">. box &#123;</span><br><span class="line">    <span class="attribute">width</span>:<span class="number">0</span>;</span><br><span class="line">    <span class="attribute">height</span>:<span class="number">0</span>;</span><br><span class="line">    <span class="attribute">border-bottom</span>:<span class="number">100px</span> solid skyblue;</span><br><span class="line">    <span class="attribute">border-right</span>:<span class="number">50px</span> solid transparent;</span><br><span class="line">    <span class="attribute">border-left</span>:<span class="number">50px</span> solid transparent;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
+<h3><span id="13-position的属性有哪些区别是什么">13. position的属性有哪些，区别是什么</span></h3><ul>
+<li><code>absolute</code>生成绝对定位的元素，相对于<code>static定位之外</code>的<code>第一个父元素</code>进行定位。元素的位置通过<code>left</code>，<code>top</code>，<code>right</code>，<code>bottom</code>属性进行规定</li>
+<li><code>reletive</code>生成相对定位的元素，<code>相对与其原来的位置进行定位</code>，元素的位置通过<code>left</code>，<code>top</code>，<code>right</code>，<code>bottom</code>属性进行规定</li>
+<li><code>fixed</code>生成绝对定位的元素，指定元素<code>相对于屏幕视口</code>（viewport）的位置来指定元素位置，元素的位置在<code>屏幕滚动时不会改变</code>比如回到顶部的按钮一般都是用此定位方式</li>
+<li><code>static</code>默认值，没有定位，元素出现在正常的文档流中，会忽略<code>left</code>，<code>top</code>，<code>right</code>，<code>bottom</code>或者<code>z-index</code>声明，<code>遵循标准流</code></li>
+<li><code>inherit</code>规定从父级元素<code>继承position属性的值</code></li>
+</ul>
 
       </section>
 
