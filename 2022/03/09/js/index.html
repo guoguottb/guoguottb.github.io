@@ -313,6 +313,29 @@
 <h3><span id="14-01-02-x3dx3d-03">14. 0.1 + .02  !&#x3D;&#x3D; 0.3</span></h3><p>存储位不够导致的精度丢失，0.1表示为<code>0.0001100110011001...</code>，而0.2表示为<code>0.0011001100110011...</code>，而在二进制中 1 + 1 &#x3D; 10，所以 0.1 + 0.2 &#x3D; <code>0.0100110011001100...</code>，转成10进制就近似表示为 <code>0.30000000000000004</code></p>
 <p>简单来说就是，浮点数转成二进制时丢失了精度，因此在二进制计算完再转回十进制时可能会和理论结果不同</p>
 <h3><span id="15-最大安全整数">15. 最大安全整数</span></h3><p>2^53 - 1，Number.MAX_SAFE_INTEGER</p>
+<h3><span id="16-深拷贝的方式">16. 深拷贝的方式</span></h3><ol>
+<li>JSON方式，序列化与反序列化</li>
+</ol>
+<ul>
+<li>如果json中有function或者undefined会造成数据丢失</li>
+<li>如果是带有正则或者是错误对象，在序列化之后会变为空对象</li>
+<li>如果json里有NaN，infinity和-infinity，序列化的结果会变null</li>
+</ul>
+<ol start="2">
+<li>递归深拷贝</li>
+<li>lodash第三方库，cloneDeep</li>
+</ol>
+<h3><span id="17-构造函数原型和实例的关系">17. 构造函数，原型和实例的关系</span></h3><p>实例对象是通过构造函数new出来的，在new的过程中实例对象的<code>__proto__</code>指向构造函数的<code>prototype</code>，然后原型对象可以通过constructor指向构造函数，包括实例对象在使用方法的时候会在自身查找，如果没有的话会顺着原型链的关系往上去寻找，直到找到顶级对象<code>Object</code>，由于顶级对象并没有其原型所以再往上会指向<code>null</code></p>
+<h3><span id="18-new的过程">18. new的过程</span></h3><ol>
+<li>会创建一个空的对象</li>
+<li>会将构造函数中的this指向所创建的对象</li>
+<li>通过this给实例对象添加属性和方法</li>
+<li>默认return返回该对象</li>
+</ol>
+<h3><span id="19-es6模块化和commonjs模块化的区别">19. es6模块化和commonjs模块化的区别</span></h3><ol>
+<li>引入方式的不同，commonjs引入方式是通过requert引入，然后es6模块化是通过import进行引入</li>
+<li>导出的方式不同，commonjs导出采用module.exports导出，然后es6模块化通过export 默认或者按需导出</li>
+</ol>
 
       </section>
 
