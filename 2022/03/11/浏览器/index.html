@@ -163,7 +163,7 @@
 <ol>
 <li><p>cookie</p>
 </li>
-<li><p>localStorage 和 sessionStorage<strong>所使用的方法是一样的</strong>，下面以sessionStorage为栗子：</p>
+<li><p>localStorage 和 sessionStorage<strong>所使用的方法是一样的</strong>，下面以sessionStorage为栗子： </p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">sessionStorage.<span class="title function_">setItem</span>(name,num);<span class="comment">//存储数据</span></span><br><span class="line"><span class="keyword">let</span> dataAll = sessionStorage.<span class="title function_">valueOf</span>();<span class="comment">//获取全部数据</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(dataAll,<span class="string">&#x27;获取全部数据&#x27;</span>);</span><br><span class="line"><span class="keyword">var</span> dataSession = sessionStorage.<span class="title function_">getItem</span>(name);<span class="comment">//获取指定键名数据</span></span><br><span class="line">sessionStorage.<span class="title function_">removeItem</span>(name); <span class="comment">//删除指定键名数据</span></span><br><span class="line">sessionStorage.<span class="title function_">clear</span>();<span class="comment">//清空缓存数据：localStorage.clear();</span></span><br></pre></td></tr></table></figure>
 
 <blockquote>
