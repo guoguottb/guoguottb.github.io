@@ -152,6 +152,31 @@
 <p>数据绑定</p>
 <p>列表渲染</p>
 <p>条件渲染</p>
+<h3><span id="02-wvss-和-css-的区别">02 . WVSS 和 CSS 的区别</span></h3><ol>
+<li>新增了rpx尺寸单位</li>
+</ol>
+<p>css中需要手动进行像素单位换算，例如rem</p>
+<p>wxss在底层支持新的尺寸单位rpx，在不同大小的屏幕上小程序自动进行换算</p>
+<ol start="2">
+<li>提供了全局的样式和局部样式</li>
+</ol>
+<p>项目根目录中的 app.wxss 会作用于小程序页面</p>
+<p>局部页面的 .wxss 样式仅对当前页面生效</p>
+<ol start="3">
+<li>WXSS 仅支持部分 CSS 选择器 （绝大多数的都是支持的）</li>
+</ol>
+<p>.class 和 #id </p>
+<p>element</p>
+<p>并集选择器，后代选择器</p>
+<p>::after 和 ::before 等伪类选择器</p>
+<h3><span id="03-页面的渲染过程">03. 页面的渲染过程</span></h3><ol>
+<li>加载解析页面的 .json 配置文件</li>
+<li>加载页面的 .wxml 模板和 .wxss 样式</li>
+<li>执行页面的 .js 文件，调用 page() 创建页面实例</li>
+<li>页面渲染完成</li>
+</ol>
+<h3><span id="04-常见组件">04. 常见组件</span></h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 视图组件</span></span><br><span class="line"><span class="number">01</span> view 相当于div</span><br><span class="line"><span class="number">02</span> scroll-view </span><br><span class="line"><span class="number">03</span> swiper swiper-item</span><br></pre></td></tr></table></figure>
+
 
       </section>
 
