@@ -179,6 +179,51 @@
 
 <h3><span id="05-事件绑定">05. 事件绑定</span></h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">bindtap或<span class="attr">bind</span>:tap 手指触摸后马上离开，蕾仕于<span class="variable constant_">HTML</span>中的click事件</span><br><span class="line">input, change</span><br></pre></td></tr></table></figure>
 
+<h3><span id="06-事件对象的属性列表">06. 事件对象的属性列表</span></h3><p>当事件回调触发的时候，会收到一个事件对象event，它的详细属性如下表所示：</p>
+<table>
+<thead>
+<tr>
+<th align="center">属性</th>
+<th align="center">类型</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">type</td>
+<td align="center">string</td>
+<td align="center">事件类型</td>
+</tr>
+<tr>
+<td align="center">timeStamp</td>
+<td align="center">Integer</td>
+<td align="center">页面打开到触发事件所经过的毫秒数</td>
+</tr>
+<tr>
+<td align="center">target</td>
+<td align="center">Object</td>
+<td align="center">触发事件的组件的一些属性值集合</td>
+</tr>
+<tr>
+<td align="center">currentTarget</td>
+<td align="center">Object</td>
+<td align="center">当前组件的一些属性值集合</td>
+</tr>
+<tr>
+<td align="center">detail</td>
+<td align="center">Object</td>
+<td align="center">额外的信息</td>
+</tr>
+<tr>
+<td align="center">touches</td>
+<td align="center">Array</td>
+<td align="center">触摸事件，当前停留在屏幕中的触摸点信息的数组</td>
+</tr>
+<tr>
+<td align="center">changedTouches</td>
+<td align="center">Array</td>
+<td align="center">触摸事件，当前变化的触摸点信息的数组</td>
+</tr>
+</tbody></table>
 
       </section>
 

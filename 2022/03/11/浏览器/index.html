@@ -320,6 +320,7 @@
 <p>将css放在文件头部，JavaScript文件放在底部，CSS执行会<code>阻塞渲染</code>，阻止JS执行，JS加载和执行会<code>阻塞HTML解析</code>，阻止<code>CSSOM</code>构建，如果这些css，js标签标签放在HEAD标签里，并且需要加载和解析很久的话，那么页面就空白了，所以JS文件要放在底部（不阻止DOM解析，但会阻止渲染），等HTML解析完了在加载JS文件，尽早向用户呈现页面的内容，那么CSS文件为什么要放在头部呢，因为先加载HTML在加载CSS，会让用户第一时间看到的页面是没有样式的，比较丑陋，为了避免这样情况发送，所以只能将CSS文件放在头部了，js文件也可以放在头部<code>script标签加上defer属性</code>就可以了，<code>异步下载</code>，延迟执行</p>
 <h3><span id="11">11.</span></h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span> url =&gt; <span class="comment">// 统一资源定位符</span></span><br><span class="line"><span class="number">2.</span> ping www.<span class="property">baidu</span>.<span class="property">com</span>   <span class="comment">// 测试连接，检查网络是否能连接</span></span><br><span class="line"><span class="number">3.</span> <span class="variable constant_">TCP</span>连接不是持续的，可以借助<span class="comment">//websocket</span></span><br><span class="line"><span class="number">4.</span> html和css转化为dom树和css结构体，转换位render树，计算布局信息，调用<span class="variable constant_">UI</span>引擎渲染，呈现用户所见画面</span><br></pre></td></tr></table></figure>
 
+<p>[…dom.matchAll(&#x2F;&lt;\s*?img[^&gt;]*?alt&#x3D;[“‘][^”]+?[‘“]&#x2F;g)]</p>
 
       </section>
 
