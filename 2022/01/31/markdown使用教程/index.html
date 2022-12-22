@@ -135,12 +135,12 @@
       
       
       <section class="article-entry markdown-body layout-margin content-padding--large soft-size--large soft-style--box">
-        <h1><span id="标题一">标题一</span></h1><h2><span id="标题二">标题二</span></h2><h3><span id="标题三">标题三</span></h3><h4><span id="标题四">标题四</span></h4><h5><span id="标题五">标题五</span></h5><h6><span id="标题六">标题六</span></h6><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs js"># 标题一 		<span class="hljs-comment">// 等同于 ctrl + 1 </span><br>## 标题二<br>### 标题三<br>#### 标题四 <br>##### 标题五 <br>###### 标题六 <br></code></pre></td></tr></table></figure>
+        <h1><span id="标题一">标题一</span></h1><h2><span id="标题二">标题二</span></h2><h3><span id="标题三">标题三</span></h3><h4><span id="标题四">标题四</span></h4><h5><span id="标题五">标题五</span></h5><h6><span id="标题六">标题六</span></h6><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># 标题一 		<span class="comment">// 等同于 ctrl + 1 </span></span><br><span class="line">## 标题二</span><br><span class="line">### 标题三</span><br><span class="line">#### 标题四 </span><br><span class="line">##### 标题五 </span><br><span class="line">###### 标题六 </span><br></pre></td></tr></table></figure>
 
 <blockquote>
 <p>这是一段引用</p>
 </blockquote>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs js">&gt;空格<br></code></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt;空格</span><br></pre></td></tr></table></figure>
 
 <p>有序列表</p>
 <ol>
@@ -148,10 +148,10 @@
 <li>把大象装进冰箱</li>
 <li>关上冰箱</li>
 </ol>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-number">1.</span>空格<br></code></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span>空格</span><br></pre></td></tr></table></figure>
 
 <p>无序列表</p>
-<figure class="highlight diff"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs diff"><span class="hljs-deletion">-空格</span><br>*空格<br><span class="hljs-addition">+空格</span><br></code></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">-空格</span><br><span class="line">*空格</span><br><span class="line">+空格</span><br></pre></td></tr></table></figure>
 
 <p>多选任务列表</p>
 <ul>
@@ -159,32 +159,32 @@
 <li><input checked disabled type="checkbox"> 睡觉</li>
 <li><input disabled type="checkbox"> 打豆豆</li>
 </ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs js">-[x]吃饭<br>-[x]睡觉<br>-[ ]打豆豆<br></code></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">-[x]吃饭</span><br><span class="line">-[x]睡觉</span><br><span class="line">-[ ]打豆豆</span><br></pre></td></tr></table></figure>
 
 <p>代码块</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs vue">```<br><br>---<br><br>~~~js<br>```vue<br>~~~<br><br>---<br><br>表格<br><br>| 姓名 | 年龄 | 成绩 |<br>| :--- | ---- | ---- |<br>|      |      |      |<br><br>```js<br>|姓名|年龄|成绩| + 回车<br></code></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">```</span><br><span class="line"></span><br><span class="line">---</span><br><span class="line"></span><br><span class="line">~~~js</span><br><span class="line">```vue</span><br><span class="line">~~~</span><br><span class="line"></span><br><span class="line">---</span><br><span class="line"></span><br><span class="line">表格</span><br><span class="line"></span><br><span class="line">| 姓名 | 年龄 | 成绩 |</span><br><span class="line">| :--- | ---- | ---- |</span><br><span class="line">|      |      |      |</span><br><span class="line"></span><br><span class="line">```js</span><br><span class="line">|姓名|年龄|成绩| + 回车</span><br></pre></td></tr></table></figure>
 
 <p>脚注</p>
 <p>一键三连<a href="%E7%82%B9%E8%B5%9E%EF%BC%8C%E6%8A%95%E5%B8%81%EF%BC%8C%E6%94%B6%E8%97%8F%EF%BC%8C%E6%9C%80%E5%A5%BD%E5%86%8D%E5%85%B3%E6%B3%A8%E4%B8%80%E4%B8%8B">^三连</a></p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs js">一键三连[^三联]<br></code></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">一键三连[^三联]</span><br></pre></td></tr></table></figure>
 
 <p>链接</p>
 <p><a target="_blank" rel="noopener" href="https://guoguottb.github.io/" title="博客首页">博主首页</a></p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs js">[博主首页](网址 <span class="hljs-string">&quot;标题文字悬浮的时候可以看到&quot;</span>)			<span class="hljs-comment">// 中括号 + 英文括号</span><br></code></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[博主首页](网址 <span class="string">&quot;标题文字悬浮的时候可以看到&quot;</span>)			<span class="comment">// 中括号 + 英文括号</span></span><br></pre></td></tr></table></figure>
 
 <p>引用链接</p>
 <p><a target="_blank" rel="noopener" href="https://guoguottb.github.io/" title="博客首页">博主博客</a></p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs js">[id]:网址 <span class="hljs-string">&quot;标题文字悬浮的时候可以看到&quot;</span><br></code></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[id]:网址 <span class="string">&quot;标题文字悬浮的时候可以看到&quot;</span></span><br></pre></td></tr></table></figure>
 
 <p>标题</p>
 <p>请参考<a href="#%E6%A0%87%E9%A2%98%E4%B8%80">标题一</a></p>
 <p>链接URL</p>
 <p><a target="_blank" rel="noopener" href="https://guoguottb.github.io/">https://guoguottb.github.io</a></p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-comment">// 如果写了https协议会自动生成链接</span><br></code></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 如果写了https协议会自动生成链接</span></span><br></pre></td></tr></table></figure>
 
 <p>行内格式</p>
 <p><em>倾斜</em>  <strong>加粗</strong>	<code>input</code>	<u>下划线</u>	:smile:	</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-comment">//  *倾斜*	**加粗**	`input`	&lt;u&gt;下划线&lt;/u&gt;	:smile:		// 标签可以参考emoji国际通用标签代码</span><br></code></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//  *倾斜*	**加粗**	`input`	&lt;u&gt;下划线&lt;/u&gt;	:smile:		// 标签可以参考emoji国际通用标签代码</span></span><br></pre></td></tr></table></figure>
 
 
       </section>
@@ -282,7 +282,7 @@
         <svg class="icon icon-categories" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
   <path d="M900.3614811 257.09082106h-339.81629553l-67.96326003-101.9448889c-19.41807444-29.12711113-48.54518557-43.69066667-82.52681443-43.69066667H123.6385189c-53.39970333 0-97.09036999 43.69066667-97.09037113 97.09036999v582.54222222c0 53.39970333 43.69066667 97.09036999 97.09037113 97.09037002h776.7229622c53.39970333 0 97.09036999-43.69066667 97.09037113-97.09037002V354.18119104c0-53.39970333-43.69066667-97.09036999-97.09037113-97.09036998z m-97.09036999 242.72592554H220.72888889c-24.27259221 0-48.54518557-24.27259221-48.54518556-48.54518556s24.27259221-48.54518557 48.54518556-48.54518444h582.54222222c24.27259221 0 48.54518557 24.27259221 48.54518556 48.54518444s-24.27259221 48.54518557-48.54518556 48.54518556z" fill="currentColor"></path>
 </svg>
-        2
+        3
       </div>
       <div class="count-box--item">
         <svg class="icon icon-tags" viewBox="0 0 1098 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
@@ -321,14 +321,20 @@
     <ul class="categorys-list">
       
         <li class="categorys-list-item">
-          <a href="/categories/true/">
-            true (2)
+          <a href="/categories/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0/">
+            前端学习 (5)
           </a>
         </li>
       
         <li class="categorys-list-item">
-          <a href="/categories/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0/">
-            前端学习 (5)
+          <a href="/categories/%E4%B8%AA%E4%BA%BA%E7%B4%AF%E8%AE%A1/">
+            个人累计 (1)
+          </a>
+        </li>
+      
+        <li class="categorys-list-item">
+          <a href="/categories/%E4%B8%AA%E4%BA%BA%E6%94%B6%E7%BA%B3/">
+            个人收纳 (1)
           </a>
         </li>
       
