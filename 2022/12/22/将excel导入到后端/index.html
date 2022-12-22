@@ -24,7 +24,7 @@
 
   
 
-  <title>css题目 | Klein Blue Sea</title>
+  <title>将excel导入到后端 | Klein Blue Sea</title>
 
   
 
@@ -100,18 +100,20 @@
     <div class="header-content">
       <div class="post-text layout-block">
         <div class="layout-margin">
-          <h1 class="title-wrap">css题目</h1>
+          <h1 class="title-wrap">将excel导入到后端</h1>
           <h2 class="title-sub-wrap">
             <strong>Guo TongBiao</strong>
             <span>发布于</span>
-            <time  class="article-date" datetime="2022-08-31T03:15:19.000Z" itemprop="datePublished">2022-08-31</time>
+            <time  class="article-date" datetime="2022-12-22T07:58:06.000Z" itemprop="datePublished">2022-12-22</time>
           </h2>
           <ul class="wrap-list dark">
+  
+    <li><a href="/categories/%E4%B8%AA%E4%BA%BA%E6%94%B6%E7%BA%B3/">📒 个人收纳</a></li>
   
 </ul>
           <ul class="wrap-list dark">
   
-    <li><a href="/tags/%E7%9F%A5%E8%AF%86%E7%82%B9/">🏷️ 知识点</a></li>
+    <li><a href="/tags/%E6%8A%80%E6%9C%AF%E5%90%88%E9%9B%86/">🏷️ 技术合集</a></li>
   
 </ul>
         </div>
@@ -135,127 +137,9 @@
       
       
       <section class="article-entry markdown-body layout-margin content-padding--large soft-size--large soft-style--box">
-        <h3><span id="1-如何水平垂直居中一个元素">1. 如何水平垂直居中一个元素</span></h3><ol>
-<li>flex布局的方式，主轴justify-content：center，侧轴：align-items: center  </li>
-<li>定位 + margin，top：50%，left：50%，margin-left ：盒子自身一半的宽度，margin-top：盒子自身高度的一半。   </li>
-<li>定位 + transform，top：50%，left：50%，translate：（-50%，-50%）</li>
-</ol>
-<h3><span id="2-css标准盒模型和ie盒模型的区别">2. css标准盒模型和ie盒模型的区别</span></h3><blockquote>
-<p>IE盒模型</p>
-</blockquote>
-<ul>
-<li>width表示 content + padding + border 这三个部分的宽度</li>
-<li>box - sizing : border - box 是IE盒子模型</li>
-</ul>
-<blockquote>
-<p>标准盒模型</p>
-</blockquote>
-<ul>
-<li>width指内容部分的宽度，不包括border和padding，所以设置这两个属性会使盒子被撑大</li>
-<li>box-sizing : content - box 使W3C盒子模型</li>
-</ul>
-<h3><span id="3-css3新属性">3. css3新属性</span></h3><ol>
-<li><p>颜色，RGBA：红绿蓝三原色，A是透明度，HSLA：色调，饱和度，亮度，透明度</p>
-</li>
-<li><p>文字阴影：text-shadow</p>
-</li>
-<li><p>盒子阴影：box-shadow</p>
-</li>
-<li><p>边框圆角：border-radius</p>
-</li>
-<li><p>背景大小：background-size：cover；把背景图像扩展至足够大，以使背景图像完全覆盖背景区域，背景图像的某些部分也许无法显示在背景定位区域中。background-size：contain；把图像扩展到最大尺寸，以使其宽度和高度完全适应内容区域，可能会失帧</p>
-</li>
-<li><p>transition&#x2F;渐变&#x2F;自定义动画&#x2F;媒体查询&#x2F;边框图片&#x2F;2&#x2F;3D转换</p>
-</li>
-</ol>
-<h3><span id="4-html5开发中遇到那些问题怎么解决的">4. HTML5开发中遇到那些问题？怎么解决的？</span></h3><ol>
-<li>同一张照片放在不同大小设备下显示的时候会导致图片失帧，解决办法就是使用2倍图，一般会在精灵图上面。</li>
-<li>禁止手机放大缩小，通常把user-saclable设置为0来关闭用户对页面视图缩放的行为</li>
-<li>上下拉动滚动条时卡顿，慢</li>
-</ol>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">body</span> &#123;</span><br><span class="line">	-webkit-<span class="attribute">overflow</span>-scrolling: touch;</span><br><span class="line">    <span class="attribute">overflow</span>-scrolling: touchl</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <h3><span id="1-将excel文件的数据导入到后端数据库">1. 将excel文件的数据导入到后端数据库</span></h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">// 需要展示一个上传文件的按钮</span><br><span class="line">&lt;el-button type=&quot;success&quot;</span><br><span class="line">           @click=&quot;onclick&quot;&gt;上传文件&lt;/el-button&gt;</span><br><span class="line">&lt;input class=&quot;file&quot;</span><br><span class="line">       ref=&quot;uploadInput&quot;</span><br><span class="line">       type=&quot;file&quot;</span><br><span class="line">       accept=&quot;.xls,.xlsx&quot;  // 限制文件上传类型</span><br><span class="line">       style=&quot;opacity:0&quot;  // 不能用v-if，否则下面拿不到dom</span><br><span class="line">       enctype=&quot;multipart/form-data&quot;</span><br><span class="line">       @change=&quot;readExcel($event)&quot; /&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">// 需要先执行 npm install xlsx 然后在需要用的vue文件中引入</span><br><span class="line">import * as XLSX from &#x27;xlsx&#x27;  </span><br><span class="line">export default &#123;</span><br><span class="line">  methods:&#123;</span><br><span class="line">    // 点击上传文件按钮的时候给隐藏的input:file添加个点击事项</span><br><span class="line">     onclick () &#123;</span><br><span class="line">      this.$refs.uploadInput.click()</span><br><span class="line">    &#125;,</span><br><span class="line">    // 01. 如果后端接受的是一个formData，下面的res即为结果</span><br><span class="line">    async readExcel (e) &#123;</span><br><span class="line">        if (e.target &amp;&amp; !e.target.files[0]) return false;</span><br><span class="line">        let formData = new FormData()</span><br><span class="line">        // 通过files就可以拿到所有上传的文件，如果是多个文件循环即可</span><br><span class="line">        formData.append(&#x27;file&#x27;, e.target.files[0])</span><br><span class="line">        // 如果要携带额外的参数</span><br><span class="line">        formData.set(&quot;key&quot;, &quot;value&quot;)</span><br><span class="line">        try &#123;</span><br><span class="line">         const res = await exportExcelApi(formData)</span><br><span class="line">         console.log(res)  // 拿到结果</span><br><span class="line">        &#125; catch (error) &#123;</span><br><span class="line">        // 错误捕获</span><br><span class="line">        &#125; finally &#123;</span><br><span class="line">        // 不管接口成功与否 将其value清空，否则再次上传相同文件无法触发change事件</span><br><span class="line">          e.target.value = &quot;&quot;  </span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">   // 01. 如果后端要求接收的一个对象数组,如：[&#123;&#125;,&#123;&#125;,&#123;&#125;,&#123;&#125;]</span><br><span class="line">   // 你只需要在上面的readExcel方法中去调用下面这个方法</span><br><span class="line">   // 例如 this.readWorkbookFromLocalFile(e.target.files[0])</span><br><span class="line">   // 然后就可以在csv中拿到处理过后的对象数组然后在传给后端</span><br><span class="line">      readWorkbookFromLocalFile (file) &#123;</span><br><span class="line">        let reader = new FileReader();</span><br><span class="line">        reader.readAsBinaryString(file);</span><br><span class="line">        reader.onload = function (e) &#123;</span><br><span class="line">        let data = e.target.result;</span><br><span class="line">        let workbook = XLSX.read(data, &#123; type: &#x27;binary&#x27; &#125;);</span><br><span class="line">        // 获取工作表名称集合</span><br><span class="line">        let sheetName = workbook.SheetNames[0];</span><br><span class="line">        let worksheet = workbook.Sheets[sheetName];</span><br><span class="line">        let excelArr = XLSX.utils.sheet_to_json(worksheet);</span><br><span class="line">        console.log(excelArr)</span><br><span class="line">      &#125;;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
 
-<ol start="4">
-<li>给盒子加padding或者border会撑大盒子，因为默认时W3C标准盒子模型，宽度只包含内容，解决方案：box-sizing:  border-box，开启盒子内减模式</li>
-<li>外边距塌陷：嵌套的两个块元素，给子元素设置一个向上的外边距，此时的父元素会跟着掉下来，形成外边距塌陷，解决方案：</li>
-</ol>
-<ul>
-<li>给父元素设置上边距</li>
-<li>给父元素设置overflow属性</li>
-<li>给父元素或者子元素设置浮动</li>
-<li>绝对定位或者固定定位</li>
-<li>给父元素加padding</li>
-</ul>
-<ol start="6">
-<li>png24位的图片在ie6中出现背景，解决方案：做成png8的</li>
-<li>浏览器默认的内外边距不一致，解决方案全局设置css样式  *  { margin : 0 ; padding : 0 }</li>
-<li>行内块元素默认有间隙，之间转换位块级元素，然后float或者display: flex</li>
-<li>图片和文字没有对其，解决方案：vertical - align: middle</li>
-</ol>
-<h3><span id="5-什么是bfc">5. 什么是BFC？</span></h3><blockquote>
-<p>概念</p>
-</blockquote>
-<p>块级格式化上下文，BFC是一个独立布局的环境，其中的元素布局不受外界的影响，在同一个BFC中，块盒和行盒都会垂直的沿着其父级元素的边框排列</p>
-<blockquote>
-<p>如何产生的及缺点</p>
-</blockquote>
-<ul>
-<li>position: absolute； </li>
-<li>display：inline-block，table-cell，flex，table-caption或者inline-flex。缺点：可能引发响应性问题</li>
-<li>float：left&#x2F;right；缺点：float：left会把元素移至左侧，并被其它元素环绕</li>
-<li>overflow：hidden，scroll，auto，clip，（overflow的值不是visible），缺点：overflow：scroll可能产生多余的滚动条，overflow：hidden将裁切移除元素</li>
-</ul>
-<blockquote>
-<p>作用</p>
-</blockquote>
-<p>利用BFC可避免外边距塌陷，当两个相邻元素在不同的BFC中，就能避免外边距塌陷的问题</p>
-<h3><span id="6-想让某一块区域出现滚动条">6. 想让某一块区域出现滚动条</span></h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">position</span>:absolute;</span><br><span class="line"><span class="attribute">top</span>:<span class="number">92px</span>;</span><br><span class="line"><span class="attribute">bottom</span>:<span class="number">100px</span>;</span><br><span class="line"><span class="attribute">overflow-y</span>:scroll;</span><br><span class="line"><span class="attribute">width</span>:<span class="number">100%</span>;</span><br></pre></td></tr></table></figure>
-
-<h3><span id="7-如何在chrome浏览器中让字体改成小于12px">7. 如何在Chrome浏览器中让字体改成小于12px？</span></h3><p>做法：加webkit前缀，用transform：scale()这个属性进行缩放！</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">p</span> <span class="selector-tag">span</span> &#123;</span><br><span class="line">    <span class="attribute">font-size</span>:<span class="number">10px</span>;</span><br><span class="line">    webkit-<span class="attribute">transform</span>:<span class="built_in">scale</span>(<span class="number">0.8</span>);</span><br><span class="line">    <span class="attribute">display</span>:block;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3><span id="8-flex布局">8. flex布局</span></h3><p>flex &#x3D; 1是哪三个属性的缩写</p>
-<ul>
-<li>flex-grow：默认值为0，指的是相对于其他的子元素的扩展比率</li>
-<li>flex-shink：默认值为1，指的是相对与其他元素的收缩比率</li>
-<li>flex-basis：默认值为auto，指的是子元素的具体长度，可以为长度（rem，px，em）也可以为百分比</li>
-</ul>
-<h3><span id="9-remx2femx2fpxx2fvhx2fvw">9. rem&#x2F;em&#x2F;px&#x2F;vh&#x2F;vw</span></h3><ul>
-<li>px，绝对单位，像素</li>
-<li>rem，相对单位，相比于html根节点字体大小</li>
-<li>em，相对单位，相对于父元素字体大小，1em&#x3D;16px</li>
-<li>vw&#x2F;vm，相对单位，相对于视口宽度&#x2F;高度，1vh&#x2F;1vm等于视口宽&#x2F;高的1%</li>
-</ul>
-<h3><span id="10-margin重叠外边距塌陷怎么解决">10. margin重叠，外边距塌陷怎么解决</span></h3><blockquote>
-<p>概念</p>
-</blockquote>
-<p>当子盒子在父盒子里面，给子盒子设置margin-top父盒子会掉下来</p>
-<blockquote>
-<p>解决办法（触发BFC）</p>
-</blockquote>
-<ul>
-<li>子级加position：absolute</li>
-<li>父级加overflow：hidden</li>
-<li>父级加padding</li>
-<li>父级加border</li>
-</ul>
-<h3><span id="11-清除浮动">11. 清除浮动</span></h3><ol>
-<li>给浮动元素的父级加上overflow：hidden</li>
-<li>在浮动的子元素最后面加个空标签属性写clear：both，但是这个标签是没有加载的，不怎么可取</li>
-<li>使用after伪元素，其实也是加clear：both</li>
-<li>直接给父级设置高度</li>
-</ol>
-<h3><span id="12-css画三角形等边三角形">12. css画三角形(等边三角形)</span></h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">. box &#123;</span><br><span class="line">    <span class="attribute">width</span>:<span class="number">0</span>;</span><br><span class="line">    <span class="attribute">height</span>:<span class="number">0</span>;</span><br><span class="line">    <span class="attribute">border-bottom</span>:<span class="number">100px</span> solid skyblue;</span><br><span class="line">    <span class="attribute">border-right</span>:<span class="number">50px</span> solid transparent;</span><br><span class="line">    <span class="attribute">border-left</span>:<span class="number">50px</span> solid transparent;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3><span id="13-position的属性有哪些区别是什么">13. position的属性有哪些，区别是什么</span></h3><ul>
-<li><code>absolute</code>生成绝对定位的元素，相对于<code>static定位之外</code>的<code>第一个父元素</code>进行定位。元素的位置通过<code>left</code>，<code>top</code>，<code>right</code>，<code>bottom</code>属性进行规定</li>
-<li><code>reletive</code>生成相对定位的元素，<code>相对与其原来的位置进行定位</code>，元素的位置通过<code>left</code>，<code>top</code>，<code>right</code>，<code>bottom</code>属性进行规定</li>
-<li><code>fixed</code>生成绝对定位的元素，指定元素<code>相对于屏幕视口</code>（viewport）的位置来指定元素位置，元素的位置在<code>屏幕滚动时不会改变</code>比如回到顶部的按钮一般都是用此定位方式</li>
-<li><code>static</code>默认值，没有定位，元素出现在正常的文档流中，会忽略<code>left</code>，<code>top</code>，<code>right</code>，<code>bottom</code>或者<code>z-index</code>声明，<code>遵循标准流</code></li>
-<li><code>inherit</code>规定从父级元素<code>继承position属性的值</code></li>
-</ul>
-<h3><span id="14-css隐藏元素">14. css隐藏元素</span></h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">01</span> <span class="selector-tag">div</span> &#123;</span><br><span class="line">    <span class="attribute">opacity</span>: <span class="number">0</span>; 属性可以传递一个 <span class="number">0</span> 到 <span class="number">1</span> 之间的数字，或者 <span class="number">0%</span> 和 <span class="number">100%</span> 之间的百分比，对应地表示完全透明和完全不透明。</span><br><span class="line">&#125;</span><br><span class="line"><span class="number">02</span> rgbc(<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>)	透明度为<span class="number">0</span></span><br><span class="line"><span class="number">03</span> <span class="attribute">transform</span>: <span class="built_in">scale</span>(<span class="number">0</span>) || <span class="built_in">translate</span>(-<span class="number">99999px</span>,<span class="number">0</span>)	元素缩放</span><br><span class="line"><span class="number">04</span> visibility: hidden; 隐藏元素</span><br><span class="line"><span class="number">05</span> <span class="attribute">display</span>:none; css隐藏</span><br><span class="line"><span class="number">06</span> <span class="attribute">z-index</span>:-<span class="number">1</span>;	权重负</span><br></pre></td></tr></table></figure>
-
+<h3><span id="2-示例图片">2. 示例图片</span></h3><p><img src="C:\Users\86132\Desktop\myblog\source_posts\imags\excel导入后端数据库并携带参数.png"></p>
 
       </section>
 
@@ -263,28 +147,14 @@
       
         <nav class="article-nav">
           
-            <div class="article-nav-item layout-padding">
-  <article class="card-container article-nav-card content-padding--primary soft-size--large soft-style--box">
-    
-    <div class="card-text">
-      
-        <a href="/2022/09/11/webpack/" itemprop="url">
-          <h2 class="card-text--title text-ellipsis">webpack</h2>
-        </a>
-      
-      <div class="card-text--row">Newer</div>
-    </div>
-  </article>
-</div>
-          
           
             <div class="article-nav-item layout-padding">
   <article class="card-container article-nav-card content-padding--primary soft-size--large soft-style--box">
     
     <div class="card-text">
       
-        <a href="/2022/07/17/ts/" itemprop="url">
-          <h2 class="card-text--title text-ellipsis">ts</h2>
+        <a href="/2022/12/22/%E7%9B%91%E5%90%AC%E7%9B%92%E5%AD%90%E6%BB%9A%E5%8A%A8/" itemprop="url">
+          <h2 class="card-text--title text-ellipsis">监听盒子滚动，给标签添加相应的样式</h2>
         </a>
       
       <div class="card-text--row">Older</div>
