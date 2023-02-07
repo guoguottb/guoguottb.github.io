@@ -24,7 +24,7 @@
 
   
 
-  <title>题目大坑 | Klein Blue Sea</title>
+  <title>前端ES6语法累计 | Klein Blue Sea</title>
 
   
 
@@ -100,16 +100,20 @@
     <div class="header-content">
       <div class="post-text layout-block">
         <div class="layout-margin">
-          <h1 class="title-wrap">题目大坑</h1>
+          <h1 class="title-wrap">前端ES6语法累计</h1>
           <h2 class="title-sub-wrap">
             <strong>Guo TongBiao</strong>
             <span>发布于</span>
-            <time  class="article-date" datetime="2022-06-23T07:47:31.000Z" itemprop="datePublished">2022-06-23</time>
+            <time  class="article-date" datetime="2023-02-07T02:41:06.000Z" itemprop="datePublished">2023-02-07</time>
           </h2>
           <ul class="wrap-list dark">
   
+    <li><a href="/categories/%E4%B8%AA%E4%BA%BA%E6%94%B6%E7%BA%B3/">📒 个人收纳</a></li>
+  
 </ul>
           <ul class="wrap-list dark">
+  
+    <li><a href="/tags/ES6/">🏷️ ES6</a></li>
   
 </ul>
         </div>
@@ -133,11 +137,19 @@
       
       
       <section class="article-entry markdown-body layout-margin content-padding--large soft-size--large soft-style--box">
-        <h3><span id="1-var-变量提升坑">1. var 变量提升坑</span></h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span> <span class="variable language_">console</span>.<span class="title function_">log</span>(username) <span class="comment">// undefinede</span></span><br><span class="line"><span class="keyword">var</span> username = <span class="string">&quot;张山&quot;</span></span><br><span class="line"><span class="number">2.</span> <span class="variable language_">console</span>.<span class="title function_">log</span>(name)	<span class="comment">// 卡卡西</span></span><br><span class="line"><span class="keyword">var</span> name = <span class="string">&quot;卡卡西&quot;</span></span><br></pre></td></tr></table></figure>
+        <h3><span id="1-解构就是把数据结构进行分解然后为定义的变量赋值">1. 解构就是把数据结构进行<code>分解</code>，然后为定义的变量<code>赋值</code></span></h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> [a, b, c] = [<span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>];</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(a, b, c);	<span class="comment">// 0 1 2</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(a + b + c);	<span class="comment">// 3</span></span><br></pre></td></tr></table></figure>
 
-<h3><span id="2-深浅拷贝坑">2. 深浅拷贝坑</span></h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span> <span class="keyword">let</span> arr = [<span class="number">1</span>,<span class="number">3</span>,<span class="number">5</span>,<span class="number">7</span>]	<span class="comment">// 一维数组可以实现表象深拷贝</span></span><br><span class="line"><span class="keyword">let</span> newArr = [...arr]	</span><br><span class="line">newArr.<span class="title function_">push</span>(<span class="number">9</span>)</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(arr,newArr) <span class="comment">// [1,3,5,7]	[1,3,5,7,9]</span></span><br></pre></td></tr></table></figure>
+<h3><span id="2-对象结构">2. 对象结构</span></h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> &#123; name, age &#125; = &#123; <span class="attr">name</span>: <span class="string">&quot;张三&quot;</span>, <span class="attr">age</span>: <span class="number">19</span> &#125;;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(name,age);	<span class="comment">//  张三 19</span></span><br></pre></td></tr></table></figure>
 
-<h3><span id="3-this指向坑">3. this指向坑</span></h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">    <span class="keyword">let</span> a = <span class="number">33</span></span><br><span class="line">    <span class="keyword">function</span> <span class="title function_">fn</span>(<span class="params"></span>) &#123;</span><br><span class="line">        <span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">            <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>.<span class="property">a</span>);</span><br><span class="line">        &#125;, <span class="number">500</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="title function_">fn</span>(&#123;</span><br><span class="line">        <span class="attr">a</span>: <span class="number">22</span></span><br><span class="line">    &#125;)</span><br><span class="line"><span class="comment">// undefinede  let换成var  则输出33</span></span><br></pre></td></tr></table></figure>
+<h3><span id="3-剩余参数">3. 剩余参数</span></h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="title function_">print</span> = (<span class="params">num, ...args</span>) =&gt; &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(num);		<span class="comment">// 0</span></span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(args);			<span class="comment">// [1,2]</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="title function_">print</span>(<span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>)	</span><br></pre></td></tr></table></figure>
+
+<h3><span id="4-结构剩余参数">4. 结构剩余参数</span></h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> arr = [<span class="number">1</span>,<span class="number">3</span>,<span class="number">5</span>,<span class="number">7</span>,<span class="number">9</span>]</span><br><span class="line"><span class="keyword">let</span> [a,...b] = arr</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(a,b)	<span class="comment">// 1 , [3,5,7,9]</span></span><br></pre></td></tr></table></figure>
+
+<h3><span id="5-合并数组">5. 合并数组</span></h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> arr = [<span class="number">1</span>,<span class="number">3</span>,<span class="number">5</span>]</span><br><span class="line"><span class="keyword">let</span> array = [<span class="number">7</span>,<span class="number">9</span>,<span class="number">0</span>]</span><br><span class="line"><span class="keyword">let</span> newArr = [...arr,...array]</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(newArr) <span class="comment">// [1,3,5,7,9,0]</span></span><br></pre></td></tr></table></figure>
+
+<h3><span id="6-可选链">6. 可选链</span></h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> result = &#123;</span><br><span class="line">    <span class="attr">response</span>:&#123;</span><br><span class="line">        <span class="attr">data</span>:&#123;</span><br><span class="line">            <span class="attr">data</span>:[<span class="number">1</span>,<span class="number">3</span>,<span class="number">5</span>,<span class="number">7</span>,<span class="number">9</span>],</span><br><span class="line">            <span class="attr">msg</span>:<span class="string">&quot;获取成功&quot;</span>,</span><br><span class="line">            <span class="attr">status</span>:<span class="string">&quot;ok&quot;</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">if</span>(result?.<span class="property">response</span>?.<span class="property">data</span>?.<span class="property">statys</span> === <span class="string">&#x27;ok&#x27;</span>) <span class="keyword">return</span> <span class="variable language_">console</span>.<span class="title function_">log</span>(result.<span class="property">response</span>.<span class="property">data</span>.<span class="property">msg</span>)</span><br></pre></td></tr></table></figure>
+
+<h3><span id="7-setset-是-es6-提供的一种数据结构它和数组很像但是它里面的数据是不可重复的">7. Set，Set 是 ES6 提供的一种数据结构，它和数组很像，但是它里面的数据是<code>不可重复</code>的</span></h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> arr = <span class="keyword">new</span> <span class="title class_">Set</span>([<span class="number">1</span>, <span class="number">3</span>, <span class="number">5</span>, <span class="number">7</span>, <span class="number">7</span>])</span><br><span class="line"><span class="keyword">let</span> array = <span class="keyword">new</span> <span class="title class_">Set</span>(<span class="string">&quot;苹果&quot;</span>, <span class="string">&quot;橘子&quot;</span>, <span class="string">&quot;橘子&quot;</span>)</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(arr, array)  <span class="comment">// Set(4) &#123;1,3,5,7&#125;	Set(2) &#123;&quot;苹果&quot;,&quot;橘子&quot;&#125;</span></span><br><span class="line">arr.<span class="title function_">add</span>(<span class="number">9</span>) <span class="comment">// arr =&gt; &#123;1,3,5,7,9&#125;</span></span><br><span class="line">arr.<span class="title function_">add</span>(<span class="number">7</span>) <span class="comment">// arr =&gt; &#123;1,3,5,7,9&#125;</span></span><br><span class="line">arr.<span class="title function_">delete</span>(<span class="number">7</span>) <span class="comment">// arr =&gt; &#123;1,3,5,9&#125;</span></span><br><span class="line"><span class="keyword">const</span> res = arr.<span class="title function_">has</span>(<span class="number">1</span>)	<span class="comment">// true</span></span><br></pre></td></tr></table></figure>
 
 
       </section>
@@ -146,28 +158,14 @@
       
         <nav class="article-nav">
           
-            <div class="article-nav-item layout-padding">
-  <article class="card-container article-nav-card content-padding--primary soft-size--large soft-style--box">
-    
-    <div class="card-text">
-      
-        <a href="/2022/07/17/ts/" itemprop="url">
-          <h2 class="card-text--title text-ellipsis">ts</h2>
-        </a>
-      
-      <div class="card-text--row">Newer</div>
-    </div>
-  </article>
-</div>
-          
           
             <div class="article-nav-item layout-padding">
   <article class="card-container article-nav-card content-padding--primary soft-size--large soft-style--box">
     
     <div class="card-text">
       
-        <a href="/2022/05/22/promise%E6%BA%90%E7%A0%81/" itemprop="url">
-          <h2 class="card-text--title text-ellipsis">promise源码</h2>
+        <a href="/2022/12/22/%E4%BC%98%E5%8C%96%E5%BC%95%E5%85%A5js%E6%96%87%E4%BB%B6/" itemprop="url">
+          <h2 class="card-text--title text-ellipsis">优化引入js文件</h2>
         </a>
       
       <div class="card-text--row">Older</div>
