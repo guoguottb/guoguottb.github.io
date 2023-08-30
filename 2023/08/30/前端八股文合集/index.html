@@ -24,7 +24,7 @@
 
   
 
-  <title>题目大坑 | Klein Blue Sea</title>
+  <title>前端八股文合集 | Klein Blue Sea</title>
 
   
 
@@ -100,16 +100,20 @@
     <div class="header-content">
       <div class="post-text layout-block">
         <div class="layout-margin">
-          <h1 class="title-wrap">题目大坑</h1>
+          <h1 class="title-wrap">前端八股文合集</h1>
           <h2 class="title-sub-wrap">
             <strong>Guo TongBiao</strong>
             <span>发布于</span>
-            <time  class="article-date" datetime="2022-06-23T07:47:31.000Z" itemprop="datePublished">2022-06-23</time>
+            <time  class="article-date" datetime="2023-08-30T09:57:47.000Z" itemprop="datePublished">2023-08-30</time>
           </h2>
           <ul class="wrap-list dark">
   
+    <li><a href="/categories/%E4%B8%AA%E4%BA%BA%E6%94%B6%E7%BA%B3/">📒 个人收纳</a></li>
+  
 </ul>
           <ul class="wrap-list dark">
+  
+    <li><a href="/tags/%E5%85%AB%E8%82%A1%E6%96%87/">🏷️ 八股文</a></li>
   
 </ul>
         </div>
@@ -133,11 +137,7 @@
       
       
       <section class="article-entry markdown-body layout-margin content-padding--large soft-size--large soft-style--box">
-        <h3><span id="1-var-变量提升坑">1. var 变量提升坑</span></h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span> <span class="variable language_">console</span>.<span class="title function_">log</span>(username) <span class="comment">// undefinede</span></span><br><span class="line"><span class="keyword">var</span> username = <span class="string">&quot;张山&quot;</span></span><br><span class="line"><span class="number">2.</span> <span class="variable language_">console</span>.<span class="title function_">log</span>(name)	<span class="comment">// 卡卡西</span></span><br><span class="line"><span class="keyword">var</span> name = <span class="string">&quot;卡卡西&quot;</span></span><br></pre></td></tr></table></figure>
-
-<h3><span id="2-深浅拷贝坑">2. 深浅拷贝坑</span></h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span> <span class="keyword">let</span> arr = [<span class="number">1</span>,<span class="number">3</span>,<span class="number">5</span>,<span class="number">7</span>]	<span class="comment">// 一维数组可以实现表象深拷贝</span></span><br><span class="line"><span class="keyword">let</span> newArr = [...arr]	</span><br><span class="line">newArr.<span class="title function_">push</span>(<span class="number">9</span>)</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(arr,newArr) <span class="comment">// [1,3,5,7]	[1,3,5,7,9]</span></span><br></pre></td></tr></table></figure>
-
-<h3><span id="3-this指向坑">3. this指向坑</span></h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">    <span class="keyword">let</span> a = <span class="number">33</span></span><br><span class="line">    <span class="keyword">function</span> <span class="title function_">fn</span>(<span class="params"></span>) &#123;</span><br><span class="line">        <span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">            <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>.<span class="property">a</span>);</span><br><span class="line">        &#125;, <span class="number">500</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="title function_">fn</span>(&#123;</span><br><span class="line">        <span class="attr">a</span>: <span class="number">22</span></span><br><span class="line">    &#125;)</span><br><span class="line"><span class="comment">// undefinede  let换成var  则输出33</span></span><br></pre></td></tr></table></figure>
+        <h3><span id="1块级元素行内元素行内块元素">1.块级元素，行内元素，行内块元素</span></h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs html">```<br><br><br><br>```css<br>   &#123;<br>    display:inLine; // 转化为行内元素<br>    disolay:inLine-block; // 转化为行内块元素<br>    display:block; // 转化为块元素<br>&#125;<br></code></pre></td></tr></table></figure>
 
 
       </section>
@@ -146,28 +146,14 @@
       
         <nav class="article-nav">
           
-            <div class="article-nav-item layout-padding">
-  <article class="card-container article-nav-card content-padding--primary soft-size--large soft-style--box">
-    
-    <div class="card-text">
-      
-        <a href="/2022/07/17/ts/" itemprop="url">
-          <h2 class="card-text--title text-ellipsis">ts</h2>
-        </a>
-      
-      <div class="card-text--row">Newer</div>
-    </div>
-  </article>
-</div>
-          
           
             <div class="article-nav-item layout-padding">
   <article class="card-container article-nav-card content-padding--primary soft-size--large soft-style--box">
     
     <div class="card-text">
       
-        <a href="/2022/05/22/promise%E6%BA%90%E7%A0%81/" itemprop="url">
-          <h2 class="card-text--title text-ellipsis">promise源码</h2>
+        <a href="/2023/03/07/tableList/" itemprop="url">
+          <h2 class="card-text--title text-ellipsis">tableList</h2>
         </a>
       
       <div class="card-text--row">Older</div>
