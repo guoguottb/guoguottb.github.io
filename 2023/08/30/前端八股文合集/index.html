@@ -137,8 +137,26 @@
       
       
       <section class="article-entry markdown-body layout-margin content-padding--large soft-size--large soft-style--box">
-        <h3><span id="1块级元素行内元素行内块元素">1.块级元素，行内元素，行内块元素</span></h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs html">```<br><br><br><br>```css<br>   &#123;<br>    display:inLine; // 转化为行内元素<br>    disolay:inLine-block; // 转化为行内块元素<br>    display:block; // 转化为块元素<br>&#125;<br></code></pre></td></tr></table></figure>
+        <h3><span id="1块级元素行内元素行内块元素">1.块级元素，行内元素，行内块元素</span></h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs html">行内元素：span img input ...<br>块级元素：div p h1...h6 header footer ...<br>空元素：br hr ...<br></code></pre></td></tr></table></figure>
 
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs css">   &#123;<br>    <span class="hljs-attribute">display</span>:inLine; // 转化为行内元素<br>    disolay:inLine-block; // 转化为行内块元素<br>    <span class="hljs-attribute">display</span>:block; // 转化为块元素<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h3><span id="2如何水平垂直居中一个元素">2.如何水平垂直居中一个元素</span></h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-number">01</span>. <span class="hljs-attribute">flex</span>布局 &#123;<br>    <span class="hljs-attribute">justify-content</span>:center;	<br>    <span class="hljs-attribute">align-items</span>:center;<br>&#125;<br><span class="hljs-number">02</span>. 定位<span class="hljs-attribute">position</span> + <span class="hljs-attribute">margin</span> &#123;<br>    <span class="hljs-attribute">top</span>:<span class="hljs-number">50%</span>;<br>    <span class="hljs-attribute">left</span>:<span class="hljs-number">50%</span>;<br>    <span class="hljs-attribute">margin-left</span>:盒子自身一半的宽度；<br>    margin-top:盒子自身一半的高度；<br>&#125;<br><span class="hljs-number">03</span>. 定位<span class="hljs-attribute">position</span> + transtorm &#123;<br>    <span class="hljs-attribute">top</span>:<span class="hljs-number">50%</span>;<br>    <span class="hljs-attribute">left</span>:<span class="hljs-number">50%</span>;<br>    <span class="hljs-attribute">transform</span>:<span class="hljs-built_in">translate</span>(-<span class="hljs-number">50%</span>,-<span class="hljs-number">50%</span>)<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h3><span id="03css标准盒模型和ie盒模型的区别">03.css标准盒模型和ie盒模型的区别</span></h3><ul>
+<li>box-sizing : border-box IE盒模型 盒子大小包含 content + padding + border (内容 内边距 边框) </li>
+<li>box- sizing : content-box 标准盒模型 中设置内边距和边框不会撑大盒子</li>
+</ul>
+<h3><span id="04css3新属性">04.css3新属性</span></h3><ul>
+<li>RGBA ：红绿蓝三原色，A指的是透明度</li>
+<li>HSLA ：色调，饱和度，亮度和透明度</li>
+<li>文字阴影 text-shadow ，盒子阴影 box-shadow，边框圆角 ：border-radius</li>
+<li>background-sizi ：cover；使背景图像完全覆盖背景区域，背景图像的某些部分也许无法显示在背景定位区域当中</li>
+<li>background:sizi ：contain；把图像拓展至最大尺寸，使其高度宽度完全适应内容区域，肯能会导致图像失帧</li>
+</ul>
+<h3><span id="05html5开发当中遇到那些问题是怎么解决的">05.html5开发当中遇到那些问题？是怎么解决的？</span></h3><ul>
+<li>各种浏览器默认的内外边距是不一致的，采用 {  margin: 0; padding : 0  }</li>
+</ul>
 
       </section>
 
