@@ -158,6 +158,26 @@
 <li>各种浏览器默认的内外边距是不一致的，采用 {  margin: 0; padding : 0  }</li>
 <li>BFC解决外边距塌陷问题，给父元素设置上边框；给父元素加padding；给父元素设置overflow属性；给父元素或者子元素设置浮动；绝对定位或者固定定位；</li>
 </ul>
+<h3><span id="06关于bfc-block-formatting-contextbfc">06.关于BFC (Block Formatting Context，BFC)</span></h3><ul>
+<li>概念：块级格式化上下文，BFC是一个独立的布局环境，其中的元素布局不受外界的影响，在同一BFC中，块盒和行盒都会垂直的沿着其父元素的边框排列</li>
+<li>如何触发BFC：绝对定位position：absolute;浮动布局，float：left&#x2F;right；overflow：hidden &#x2F; scroll &#x2F; auto &#x2F; clip 即overflow的值不是visible，overflow：scroll可能会产生多余的滚动条，overflow：hidden区域溢出隐藏 </li>
+<li>作用：可利用BFC解决外边距塌陷问题</li>
+</ul>
+<h3><span id="07想让某一块区域出现滚动条">07.想让某一块区域出现滚动条</span></h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs css">box &#123;<br>    <span class="hljs-attribute">position</span>:absolute;<br>    <span class="hljs-attribute">top</span>:<span class="hljs-number">92px</span>;<br>    <span class="hljs-attribute">bottom</span>:<span class="hljs-number">100px</span>;<br>    <span class="hljs-attribute">overflow-y</span>:scroll;<br>    <span class="hljs-attribute">width</span>:<span class="hljs-number">100%</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h3><span id="08如何-在chrome浏览器中让字体小于12px">08.如何 在Chrome浏览器中让字体小于12px</span></h3><ul>
+<li>可利用缩放功能，即transform：scale(0.8)这个属性进行缩放</li>
+</ul>
+<h3><span id="09flex布局">09.flex布局</span></h3><ul>
+<li><p>改变flex主侧轴方向，flex-direction: column</p>
+</li>
+<li><p>flex:1 是哪三个属性的缩写</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-attribute">flex-grow</span>  // 默认值为<span class="hljs-number">0</span>，指的是相对于其他的子元素的拓展比率<br><span class="hljs-attribute">flex</span>-shink  // 默认值为<span class="hljs-number">1</span>，指的是相对于其他元素的收缩比率<br><span class="hljs-attribute">flex-basis</span>  // 默认值是auto,指的是子元素的具体长度；单位可以为(rem,px,<span class="hljs-selector-tag">em</span>)也可以为百分比<br></code></pre></td></tr></table></figure></li>
+</ul>
+<h3><span id="10开发h5页面遇到的兼容问题">10.开发h5页面遇到的兼容问题</span></h3><ul>
+<li>ios验证码自动填充，重复两次问题，解决办法就是用maxLength来限制input的输入长度</li>
+<li>ios中的input type&#x3D;number不是数字键盘，需要加pattern&#x3D;”[0-9]*”属性</li>
+</ul>
 
       </section>
 
