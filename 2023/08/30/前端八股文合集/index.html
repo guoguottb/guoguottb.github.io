@@ -178,7 +178,43 @@
 <li>ios验证码自动填充，重复两次问题，解决办法就是用maxLength来限制input的输入长度</li>
 <li>ios中的input type&#x3D;number不是数字键盘，需要加pattern&#x3D;”[0-9]*”属性</li>
 </ul>
-
+<h3><span id="11事件循环">11.事件循环</span></h3><ul>
+<li>概念：执行栈查看任务队列有没有任务并执行的过程称为事件循环</li>
+<li>应用场景：如同步代码异步代码一起执行的时候，像定时器，点击事件</li>
+<li>原理：js是执行机制是单线程的，做完一件事再去做下一件事，当他执行到异步任务时会把异步代码交给执行环境（浏览器）代执行，然后继续执行执行栈中的同步代码，执行环境中的异步代码准备就绪后会把回调函数放入任务队列中，等执行栈中的同步任务执行完js会去看任务队列中有没有准备好的异步代码，如果有就拿回来放入执行队列执行。只要执行完执行栈任务就回头去看任务队列（因为是单线程的，如果有多个异步任务就需要执行完一个再回头拿下一个）（一有空就回头看），这样就形成了一个循环</li>
+<li>宏任务类型：定时器，script（整体代码），ui交互事件</li>
+<li>微任务类型：Promise.then和.catch，Object.observe…</li>
+<li>执行顺序：同步任务 &gt; 微任务 &gt; 宏任务 &gt; 微任务</li>
+</ul>
+<h3><span id="12promise">12.Promise</span></h3><ul>
+<li>概念：promise本质上是一个构造函数，它有三种状态pedding（等待）&#x2F; resolve（成功）&#x2F; reject（失败），一旦状态发生改变为成功或者失败之后它就不会再发生改变了</li>
+<li>注意事项：一直使用.then需要在上一个.then中return出一个新的promise，并且调用resolve</li>
+<li>优缺点：它可以链式写的方式解决回调地狱的问题，缺点就是如果.then有很多的话结构还是不够清晰，解决办法就是async搭配await使用</li>
+<li>promise.all()：会等待promise中的异步代码全部执行完之后才会返回结果，缺陷就是一旦有一个异步出错调用reject就会进入catch，如果多个reject的话只返回执行最快的一个promise结果</li>
+<li>promise.allSettled()：等all里面的promise异步全部执行完后才返回结果，其返回值是一个promise示例，缺陷就是不管成功与否都会打印结果</li>
+<li>promise.any()：其返回值是执行成功并且执行最快的一个promise结果，如果全部的promise都返回失败，则返回一个错误对象（AggregeteError）所有的promise都为失败</li>
+<li>promise.rece()：返回结果时机是谁先执行完就返回谁，无论resolve或者reject，通俗来讲就是不管成功与否只返回最快的一个结果</li>
+<li>上诉四个promise静态方法的传参均可以是一个数组，数组中记录的是所有的promise结果</li>
+</ul>
+<h3><span id="13闭包">13.闭包</span></h3><ul>
+<li>概念：闭包就是嵌套的内部函数，一个函数能访问另一个函数作用域中的变量，那么这个被访问的函数就是闭包函数</li>
+<li>原理：利用了作用域链的查找机制，JavaScript在使用一个变量的时候会在，它会优先在当前作用域区间去寻找这个变量，如果没有找到的话会逐层往外层作用域中去寻找，直至找到全局作用域</li>
+<li>优点：变量私有化，有效的避免变量污染。延长了作用域范围。延长了局部作用域变量的生命周期（函数执行完之后变量还未被释放）</li>
+<li>缺点：如果不及时处理的话容易造成内存泄漏，不能触发js的垃圾回收机制来进行回收</li>
+</ul>
+<h3><span id="14垃圾回收机制gc">14.垃圾回收机制（GC）</span></h3><ul>
+<li>引用计数法：通过对一个值的引用次数来进行统计，如果引用次数为0的话，这个值会被回收，缺点会造成循环引用不会被回收的问题，例如我在一个函数内声明了两个对象A，B，将B的值赋予了A的name属性</li>
+<li>标记清除法：垃圾回收器会给在内存中的变量都做上标记，然后它会去除在环境中的变量和被环境中变量引用的变量(闭包)的标记，在这之后的被标记的变量就是需要清除的变量了。之后垃圾回收器将会回收这些变量所占的内存了</li>
+</ul>
+<h3><span id="15浅拷贝和深拷贝">15.浅拷贝和深拷贝</span></h3><ul>
+<li><p>概念：浅拷贝拷贝复杂类型的时候是拷贝的地址，拷贝完之后我去修改某一个对象中的某个属性会导致两个对象中的属性均发生改变。深拷贝则拷贝的是完完全全新的属性，改变某一个对象中的属性的时候不会相互影响</p>
+</li>
+<li><p>浅拷贝方法：拓展运算符拷贝数组。for in遍历对象，将新对象的key设置为原对象的key，这样会导致新对象的值为原对象的值</p>
+</li>
+<li><p>深拷贝的方法</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-number">01</span>. <span class="hljs-title class_">JSON</span>.<span class="hljs-title function_">parse</span>(<span class="hljs-title class_">JSON</span>.<span class="hljs-title function_">stringify</span>(obj)) <br><span class="hljs-comment">// 优点：方便快捷</span><br><span class="hljs-comment">// 缺点：如果在使用JSON转换的时候，如果对象中有undefined或者是function会在转换的时候导致数据丢失</span><br><span class="hljs-comment">//      如果带有正则或者错误对象，在序列化后变成空对象</span><br><span class="hljs-comment">//      如果在JSON里有NaN infinity和-infinity者会被序列为NaN</span><br><span class="hljs-number">02</span>. 递归对象实现深拷贝<br><span class="hljs-keyword">function</span> <span class="hljs-title function_">deepCope</span>(<span class="hljs-params">obj</span>) &#123;<br>  <span class="hljs-keyword">let</span> newObj = <span class="hljs-title class_">Array</span>.<span class="hljs-title function_">isArray</span>(obj) ? [] : &#123;&#125;;<br>  <span class="hljs-keyword">if</span> (obj &amp;&amp; <span class="hljs-keyword">typeof</span> obj === <span class="hljs-string">&quot;object&quot;</span>) &#123;<br>    <span class="hljs-keyword">for</span> (key <span class="hljs-keyword">in</span> obj) &#123;<br>      <span class="hljs-keyword">if</span> (obj[key] &amp;&amp; <span class="hljs-keyword">typeof</span> obj[key] === <span class="hljs-string">&quot;object&quot;</span>) &#123;<br>        newObj[key] = <span class="hljs-title function_">deepCope</span>(obj[key]);<br>      &#125; <span class="hljs-keyword">else</span> &#123;<br>        newObj[key] = obj[key];<br>      &#125;<br>    &#125;<br>  &#125;<br>  <span class="hljs-keyword">return</span> newObj;<br>&#125;<br><span class="hljs-keyword">let</span> obj1 = &#123;<br>  <span class="hljs-attr">name</span>: <span class="hljs-string">&quot;张三&quot;</span>,<br>  <span class="hljs-attr">age</span>: <span class="hljs-number">20</span>,<br>&#125;;<br><span class="hljs-keyword">const</span> obj = <span class="hljs-title function_">deepCope</span>(obj1);<br><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(obj); <span class="hljs-comment">//&#123;name: &#x27;张三&#x27;, age: 20&#125;</span><br><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(obj === obj1); <span class="hljs-comment">// false</span><br><span class="hljs-number">03</span>. loadsh第三方包<br><span class="hljs-comment">// 引入lodash</span><br><span class="hljs-keyword">import</span> lodash <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;lodash&#x27;</span><br><span class="hljs-keyword">const</span> allChannels = [<br>  &#123; <span class="hljs-attr">name</span>: <span class="hljs-string">&#x27;前端&#x27;</span>, <span class="hljs-attr">id</span>: <span class="hljs-number">1</span>&#125;,<br>  &#123; <span class="hljs-attr">name</span>: <span class="hljs-string">&#x27;java&#x27;</span>, <span class="hljs-attr">id</span>: <span class="hljs-number">2</span>&#125;,<br>  &#123; <span class="hljs-attr">name</span>: <span class="hljs-string">&#x27;python&#x27;</span>, <span class="hljs-attr">id</span>: <span class="hljs-number">3</span>&#125;,<br>  &#123; <span class="hljs-attr">name</span>: <span class="hljs-string">&#x27;产品&#x27;</span>, <span class="hljs-attr">id</span>: <span class="hljs-number">4</span> &#125;,<br>  &#123; <span class="hljs-attr">name</span>: <span class="hljs-string">&#x27;前端&#x27;</span>, <span class="hljs-attr">id</span>: <span class="hljs-number">1</span>&#125;,<br>]<br><span class="hljs-keyword">const</span> allChannelsCopy = lodash.<span class="hljs-title function_">cloneDeep</span>(allChannels)<br>allChannelsCopy === allChannels <span class="hljs-comment">// false </span><br></code></pre></td></tr></table></figure></li>
+</ul>
+<h3><span id="16构造函数原型实例的关系">16.构造函数，原型，实例的关系</span></h3>
       </section>
 
       
