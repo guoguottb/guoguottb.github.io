@@ -258,7 +258,21 @@
 <li>子传父：通过this.$emit(function，payload)，在子组件中通过this.$emit()去触发父组件中已经定义好的方法，并且可以在参数二中携带参数过去触发对应的方法</li>
 <li>路由传参：params，query</li>
 </ol>
-<h3><span id="26谈谈vuex">26.谈谈vuex</span></h3>
+<h3><span id="26vuex">26.vuex</span></h3><ul>
+<li>概念：Vuex 是一个专为 Vue.js 应用程序开发的状态管理模式。它采用集中式存储管理应用的所有组件的状态，并以相应的规则保证状态以一种可预测的方式发生变化</li>
+<li>优点：如果不使用vuex传参像多个组件要互相通信会比较麻烦。也不易于维护</li>
+<li>缺点：不具备持久化，页面数据刷新就没了。是应用级别的数据</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs js">/ state：用于定义和存放数据的<br><span class="hljs-comment">// 组件内使用：多次使用建议用mapState引入，然后在computed中用...展开使用，mapState本身是一个函数，调用传递一个数组，要用哪像直接将名字写到数组里就行，他的返回值是一个对象，对象里存的就是想要用到的数据的计算属性 使用：直接写this.数据名字就行</span><br></code></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs js">/ actions：用于操作异步操作，但是本身不能修改state中的数据，要借助mutations来进行操作 <br><span class="hljs-comment">// 定义：在actions中写一个函数，函数第一个参数是store,第二个参数是payload。使用的时候可以通过store.commit(&#x27;方法名&#x27;)来调用mutations中的函数来进行操作。也可以直接在接收参数时直接在commit解构出来。写法函数(&#123;commit&#125;,payload)</span><br><span class="hljs-comment">// 使用：次数不多：this.$store.dispatch(&#x27;函数名,传的参数&#x27;),多次使用：引入mapActions。在method中...展开。使用的时候直接this.参数名mapActions本身是一个函数，调用传递一个数组，要用哪个函数直接将名字写到数组里就行，他的返回值是一个对象，对象里存的就是想要用到的函数的名字</span><br></code></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs js">/ mutations：修改数据的唯一途径。只能操作同步操作<br><span class="hljs-comment">// 定义：在mutations里面写一个函数，函数的第一个形参是state。第二个是payload（自己传的）</span><br><span class="hljs-comment">// 使用：次数不多：在组件中通过this.$store.commit(&#x27;函数名&#x27;),多次使用：建议用mapMutations引入，然后在method中用...展开使用，本身是一个函数，调用传递一个数组，要用哪像直接将名字写到数组里就行，用的时候直接写this.函数名</span><br></code></pre></td></tr></table></figure>
+
+<ul>
+<li>module，作用：将store模块化。让每个模块有私有的state，mutations等… 。多次使用：在组件内引入createNamespacedHelpers（创建命名空间辅助函数）。然后利用createNamespacedHelpers（‘模块名’）创建并解构出新的mapMutations等辅助函数，辅助函数最好在解构的时候重新命名一下，避免冲突。用的时候和普通的mutations一样，在method中…展开，只不过把mutations改成自己重命名的名字就好了</li>
+</ul>
+<h3><span id="27vue中数据不响应的几种情况">27.vue中数据不响应的几种情况</span></h3>
       </section>
 
       
