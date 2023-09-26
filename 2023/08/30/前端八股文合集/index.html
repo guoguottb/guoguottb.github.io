@@ -272,8 +272,24 @@
 <ul>
 <li>module，作用：将store模块化。让每个模块有私有的state，mutations等… 。多次使用：在组件内引入createNamespacedHelpers（创建命名空间辅助函数）。然后利用createNamespacedHelpers（‘模块名’）创建并解构出新的mapMutations等辅助函数，辅助函数最好在解构的时候重新命名一下，避免冲突。用的时候和普通的mutations一样，在method中…展开，只不过把mutations改成自己重命名的名字就好了</li>
 </ul>
-<h3><span id="27vue中数据不响应的几种情况">27.vue中数据不响应的几种情况</span></h3><ul>
-<li></li>
+<h3><span id="27nexttick">27.$nextTick</span></h3><ul>
+<li>$nextTick()可以将回调延迟到下次 DOM 更新循环之后执行。在修改数据之后立即使用它，然后等待 DOM 更新。例如 我们在页面上有一个button按钮点击以后更新一段文字，当点击后立即获取dom会发现数据变了但是dom还没有随着数据变化，这是因为在vue中数据驱动视图更新是异步的，通过$nextTick就可以实现当点击完立即获取到最新的dom了。它的作用可以等待dom更新完在获取数据。如果在created中想获取dom也可以通过$nextTick（）获取</li>
+</ul>
+<h3><span id="28computed和watch之间的区别">28.computed和watch之间的区别</span></h3><ul>
+<li>computed能完成的功能，watch都可以完成</li>
+<li>能完成的功能，computed不一定能完成。例如watch可以进行异步操作</li>
+</ul>
+<h3><span id="29虚拟dom和diff算法">29.虚拟dom和diff算法</span></h3><ul>
+<li>虚拟dom概念：本质上就是一个JS对象，可以用来描述你希望在屏幕上看到的内容，里面记录了dom节点的属性等一些信息</li>
+<li>作用：提高dom渲染效率，高效更新</li>
+<li>原理：在页面刷新时首先第一次渲染页面会根据数据生成一个虚拟dom对象并且映射一个真实dom渲染到页面中。在数据被更新时会重新生成一个虚拟dom对象，此时就会有两个虚拟对象，一个是旧的一个是新生成的。然后通过diff算法去对比得到真实dom，最后渲染到页面上</li>
+<li>缺点：比如首次渲染大量DOM时，由于多了一层虚拟DOM的计算，会比innerHTML插入慢</li>
+<li>diff算法也就是将新的虚拟dom和原来的虚拟dom进行对比，本质上也就是记录修改看对象中的某个dom节点发生了改变</li>
+</ul>
+<h3><span id="30浏览器的强缓存和协商缓存">30.浏览器的强缓存和协商缓存</span></h3><ul>
+<li>概念：浏览器在请求回资源时会先将资源存到本地，然后渲染，下次访问这个页面时，由缓存机制来决定重新发送请求还是使用本地的缓存</li>
+<li>作用：减少不必要的数据传输，降低服务器的压力，加快客户端访问速度，增强用户体验</li>
+<li>强缓存：强制使用本地缓存的数据渲染到页面，前提是资源还没失效，实现方式：后端在响应头中返回Expires 和 Cache-Control两个字段，Expires ：缓存的时间，有效时期和本地时间作对比，但是有缺点，如果手动修改本地时间就会导致不准确，Cache-Control：这个也是规定有效时间，但是他是一个相对的时间，比如是距离本地时间后1个月失效。这样更加准确，<code>Cache-Control的优先级会比Expires 高</code></li>
 </ul>
 
       </section>
